@@ -122,8 +122,6 @@ namespace R423.ViewModel
                 { 75, new SelectedMode("Ретр-1", "2048", "2048 внешний", "ЦТРС А->Б") },
                 { 76, new SelectedMode("Ретр-1", "2048", "2048 внешний", "ЦТРС Б->А") }
             };
-            var k = _selectedModeDict.Select(el => el.Value).ToList();
-            int a = 1;
         }
 
         private ICommand _drawStateCommand;
