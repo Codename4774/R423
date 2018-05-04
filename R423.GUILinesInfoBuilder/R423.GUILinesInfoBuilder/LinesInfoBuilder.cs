@@ -47,7 +47,7 @@ namespace R423.GUILinesInfoBuilder
             SignalPathStatesController.SignalPathStates = new SignalPathStates();
 
             points = new List<Point>();
-            picture = new Bitmap("skeme.png");
+            picture = new Bitmap("scheme.png");
             graphics = pictureBoxImage.CreateGraphics();
             pen = new Pen(Color.BlueViolet);
             pen.Width = 3;
@@ -174,15 +174,23 @@ namespace R423.GUILinesInfoBuilder
 
         private void saveLinesInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Serializer.SerializeLinesBase(LineStatesController.PathToFile, LineStatesController.LineBase);
+            DialogResult dialog = MessageBox.Show("Confirm ?", "Save lines info", MessageBoxButtons.YesNo);
+            if (! (dialog == DialogResult.Abort || dialog == DialogResult.Cancel || dialog == DialogResult.No) )
+            {
+                Serializer.SerializeLinesBase(LineStatesController.PathToFile, LineStatesController.LineBase);
+            }
         }
 
         private void loadFilesInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LineStatesController.LineBase = new LinesBase(LineStatesController.PathToFile);
-            id = GetLastIndex(LineStatesController.LineBase.LineBase);
-            UpdateLineList();
-            Redraw();
+            DialogResult dialog = MessageBox.Show("Confirm ?", "Load lines info", MessageBoxButtons.YesNo);
+            if (!(dialog == DialogResult.Abort || dialog == DialogResult.Cancel || dialog == DialogResult.No))
+            {
+                LineStatesController.LineBase = new LinesBase(LineStatesController.PathToFile);
+                id = GetLastIndex(LineStatesController.LineBase.LineBase);
+                UpdateLineList();
+                Redraw();
+            }
         }
 
         private int GetLastIndex<T>(Dictionary<int, T> dictionary)
@@ -212,7 +220,7 @@ namespace R423.GUILinesInfoBuilder
 
         private void Redraw()
         {
-            graphics.DrawImage(picture, 0, 0);
+            graphics.DrawImageUnscaledAndClipped(picture, new System.Drawing.Rectangle(new Point(0, 0), picture.Size));
             DrawExistingLines(LineStatesController.LineBase);
         }
 
@@ -443,6 +451,16 @@ namespace R423.GUILinesInfoBuilder
                 textBoxPathStates.Clear();
                 textBoxNumberPath.Clear();
             }
+        }
+
+        private void panelImageContainer_Scroll(object sender, ScrollEventArgs e)
+        {
+            Redraw();
+        }
+
+        private void panelImageContainer_MouserWheel(object sender, MouseEventArgs e)
+        {
+            Redraw();
         }
     }
 }

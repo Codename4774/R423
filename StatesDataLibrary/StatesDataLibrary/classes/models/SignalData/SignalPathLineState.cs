@@ -17,9 +17,9 @@ namespace StatesDataLibrary.Classes.Models.SignalData
 
         public DirectionEnum Direction { get; set; }
 
-        public int R { get; set; }
-        public int G { get; set; }
-        public int B { get; set; }
+        public byte R { get; set; }
+        public byte G { get; set; }
+        public byte B { get; set; }
 
         [NonSerialized]
         private Color _color;

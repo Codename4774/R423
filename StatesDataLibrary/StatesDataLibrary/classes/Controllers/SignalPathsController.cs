@@ -17,7 +17,7 @@ namespace StatesDataLibrary.Classes.Controllers
         private static readonly string _pathToFile = "SignalPaths.xml";
 
 
-        static SignalPathsController()
+        public static void Initialize()
         {
             SignalPaths = new SignalPaths(PathToFile);
         }

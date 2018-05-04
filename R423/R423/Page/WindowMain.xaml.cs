@@ -29,7 +29,44 @@ namespace R423.Page
         public WindowMain()
         {
             InitializeComponent();
-            DataContext = new WindowMainViewModel();
+            DataContext = new WindowMainViewModel(CanvasDrawing);
+            var allModes = (DataContext as WindowMainViewModel).AllModes;
+            NameCombo.ItemsSource = allModes.Select(el => el.Name).Distinct();
+        }
+
+        private void NameSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var allModes = (DataContext as WindowMainViewModel).AllModes;
+            SpeedCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem).Select(el => el.Speed).Distinct();
+            TypeCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem && 
+                                                   el.Speed == (string)SpeedCombo.SelectedItem).Select(el => el.Type).Distinct();
+            DirectionCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem && 
+                                                        el.Speed == (string)SpeedCombo.SelectedItem &&
+                                                        el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
+            SpeedCombo.SelectedIndex = 0;
+            TypeCombo.SelectedIndex = 0;
+            DirectionCombo.SelectedIndex = 0;
+        }
+
+        private void SpeedSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var allModes = (DataContext as WindowMainViewModel).AllModes;
+            TypeCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem && 
+                                                   el.Speed == (string)SpeedCombo.SelectedItem).Select(el => el.Type).Distinct();
+            DirectionCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem &&
+                                                        el.Speed == (string)SpeedCombo.SelectedItem && 
+                                                        el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
+            TypeCombo.SelectedIndex = 0;
+            DirectionCombo.SelectedIndex = 0;
+        }
+
+        private void TypeSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var allModes = (DataContext as WindowMainViewModel).AllModes;
+            DirectionCombo.ItemsSource = allModes.Where(el => el.Name == (string)NameCombo.SelectedItem && 
+                                                        el.Speed == (string)SpeedCombo.SelectedItem && 
+                                                        el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
+            DirectionCombo.SelectedIndex = 0;
         }
     }
 }

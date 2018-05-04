@@ -65,17 +65,25 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\SelectedDrawableState.cs" />
+    <Compile Include="Model\SelectedMode.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Service\DI\ServiceRegistry.cs" />
     <Compile Include="Service\Implementation\CoordsConverter.cs" />
+    <Compile Include="Service\Implementation\DrawContextProvider.cs" />
+    <Compile Include="Service\Implementation\DrawManager.cs" />
     <Compile Include="Service\Implementation\ResourceManager.cs" />
+    <Compile Include="Service\Interface\Direction.cs" />
     <Compile Include="Service\Interface\ICoordsConverter.cs" />
+    <Compile Include="Service\Interface\IDrawManager.cs" />
     <Compile Include="Service\Interface\IResourceManager.cs" />
-    <Compile Include="ViewModel\Command\CanvasLoadedCommand.cs" />
+    <Compile Include="Service\ServiceProvider.cs" />
+    <Compile Include="ViewModel\Command\DrawSignalPathCommand.cs" />
+    <Compile Include="ViewModel\Command\DrawStateCommand.cs" />
+    <Compile Include="ViewModel\Command\SignalPathChangedCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WindowMainViewModel.cs" />
   </ItemGroup>
@@ -126,6 +134,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\decScaleButtonIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\incScaleButtonIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\refreshButtonIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\skeme.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -35,10 +35,15 @@
             this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveLinesInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFilesInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePathStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadPathStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSignalPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadSignalPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.panelLinesList = new System.Windows.Forms.Panel();
             this.listBoxLinesInfo = new System.Windows.Forms.ListBox();
             this.panelSignalPath = new System.Windows.Forms.Panel();
+            this.buttonSelectStateLineColor = new System.Windows.Forms.Button();
             this.listBoxSignalPath = new System.Windows.Forms.ListBox();
             this.buttonAddPath = new System.Windows.Forms.Button();
             this.buttonSavePath = new System.Windows.Forms.Button();
@@ -60,18 +65,15 @@
             this.labelNumberState = new System.Windows.Forms.Label();
             this.textBoxNumberState = new System.Windows.Forms.TextBox();
             this.listBoxSignalPathState = new System.Windows.Forms.ListBox();
-            this.savePathStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadPathStatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialogStateColor = new System.Windows.Forms.ColorDialog();
-            this.buttonSelectStateLineColor = new System.Windows.Forms.Button();
-            this.saveSignalPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadSignalPathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineStatesControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelImageContainer = new System.Windows.Forms.Panel();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.panelLinesList.SuspendLayout();
             this.panelSignalPath.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lineStatesControllerBindingSource)).BeginInit();
+            this.panelImageContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuMain
@@ -119,16 +121,46 @@
             this.loadFilesInfoToolStripMenuItem.Text = "Load lines info";
             this.loadFilesInfoToolStripMenuItem.Click += new System.EventHandler(this.loadFilesInfoToolStripMenuItem_Click);
             // 
+            // savePathStatesToolStripMenuItem
+            // 
+            this.savePathStatesToolStripMenuItem.Name = "savePathStatesToolStripMenuItem";
+            this.savePathStatesToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.savePathStatesToolStripMenuItem.Text = "Save path states";
+            this.savePathStatesToolStripMenuItem.Click += new System.EventHandler(this.savePathStatesToolStripMenuItem_Click);
+            // 
+            // loadPathStatesToolStripMenuItem
+            // 
+            this.loadPathStatesToolStripMenuItem.Name = "loadPathStatesToolStripMenuItem";
+            this.loadPathStatesToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.loadPathStatesToolStripMenuItem.Text = "Load path states";
+            this.loadPathStatesToolStripMenuItem.Click += new System.EventHandler(this.loadPathStatesToolStripMenuItem_Click);
+            // 
+            // saveSignalPathsToolStripMenuItem
+            // 
+            this.saveSignalPathsToolStripMenuItem.Name = "saveSignalPathsToolStripMenuItem";
+            this.saveSignalPathsToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.saveSignalPathsToolStripMenuItem.Text = "Save signal paths";
+            this.saveSignalPathsToolStripMenuItem.Click += new System.EventHandler(this.saveSignalPathsToolStripMenuItem_Click);
+            // 
+            // loadSignalPathsToolStripMenuItem
+            // 
+            this.loadSignalPathsToolStripMenuItem.Name = "loadSignalPathsToolStripMenuItem";
+            this.loadSignalPathsToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.loadSignalPathsToolStripMenuItem.Text = "Load signal paths";
+            this.loadSignalPathsToolStripMenuItem.Click += new System.EventHandler(this.loadSignalPathsToolStripMenuItem_Click);
+            // 
             // pictureBoxImage
             // 
             this.pictureBoxImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBoxImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImage.Image")));
             this.pictureBoxImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxImage.InitialImage")));
-            this.pictureBoxImage.Location = new System.Drawing.Point(0, 28);
+            this.pictureBoxImage.Location = new System.Drawing.Point(1, 1);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(1363, 801);
+            this.pictureBoxImage.Size = new System.Drawing.Size(4102, 2298);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxImage.TabIndex = 1;
             this.pictureBoxImage.TabStop = false;
+            this.pictureBoxImage.AutoScrollOffset = new System.Drawing.Point(0, 0); 
             this.pictureBoxImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxImage_MouseClick);
             this.pictureBoxImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxImage_MouseMove);
             // 
@@ -182,6 +214,16 @@
             this.panelSignalPath.Name = "panelSignalPath";
             this.panelSignalPath.Size = new System.Drawing.Size(1364, 177);
             this.panelSignalPath.TabIndex = 3;
+            // 
+            // buttonSelectStateLineColor
+            // 
+            this.buttonSelectStateLineColor.Location = new System.Drawing.Point(793, 31);
+            this.buttonSelectStateLineColor.Name = "buttonSelectStateLineColor";
+            this.buttonSelectStateLineColor.Size = new System.Drawing.Size(116, 23);
+            this.buttonSelectStateLineColor.TabIndex = 21;
+            this.buttonSelectStateLineColor.Text = "State color";
+            this.buttonSelectStateLineColor.UseVisualStyleBackColor = true;
+            this.buttonSelectStateLineColor.Click += new System.EventHandler(this.buttonSelectStateLineColor_Click);
             // 
             // listBoxSignalPath
             // 
@@ -377,56 +419,29 @@
             this.listBoxSignalPathState.TabIndex = 0;
             this.listBoxSignalPathState.SelectedIndexChanged += new System.EventHandler(this.listBoxSignalPathState_SelectedIndexChanged);
             // 
-            // savePathStatesToolStripMenuItem
-            // 
-            this.savePathStatesToolStripMenuItem.Name = "savePathStatesToolStripMenuItem";
-            this.savePathStatesToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
-            this.savePathStatesToolStripMenuItem.Text = "Save path states";
-            this.savePathStatesToolStripMenuItem.Click += new System.EventHandler(this.savePathStatesToolStripMenuItem_Click);
-            // 
-            // loadPathStatesToolStripMenuItem
-            // 
-            this.loadPathStatesToolStripMenuItem.Name = "loadPathStatesToolStripMenuItem";
-            this.loadPathStatesToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
-            this.loadPathStatesToolStripMenuItem.Text = "Load path states";
-            this.loadPathStatesToolStripMenuItem.Click += new System.EventHandler(this.loadPathStatesToolStripMenuItem_Click);
-            // 
-            // buttonSelectStateLineColor
-            // 
-            this.buttonSelectStateLineColor.Location = new System.Drawing.Point(793, 31);
-            this.buttonSelectStateLineColor.Name = "buttonSelectStateLineColor";
-            this.buttonSelectStateLineColor.Size = new System.Drawing.Size(116, 23);
-            this.buttonSelectStateLineColor.TabIndex = 21;
-            this.buttonSelectStateLineColor.Text = "State color";
-            this.buttonSelectStateLineColor.UseVisualStyleBackColor = true;
-            this.buttonSelectStateLineColor.Click += new System.EventHandler(this.buttonSelectStateLineColor_Click);
-            // 
-            // saveSignalPathsToolStripMenuItem
-            // 
-            this.saveSignalPathsToolStripMenuItem.Name = "saveSignalPathsToolStripMenuItem";
-            this.saveSignalPathsToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
-            this.saveSignalPathsToolStripMenuItem.Text = "Save signal paths";
-            this.saveSignalPathsToolStripMenuItem.Click += new System.EventHandler(this.saveSignalPathsToolStripMenuItem_Click);
-            // 
-            // loadSignalPathsToolStripMenuItem
-            // 
-            this.loadSignalPathsToolStripMenuItem.Name = "loadSignalPathsToolStripMenuItem";
-            this.loadSignalPathsToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
-            this.loadSignalPathsToolStripMenuItem.Text = "Load signal paths";
-            this.loadSignalPathsToolStripMenuItem.Click += new System.EventHandler(this.loadSignalPathsToolStripMenuItem_Click);
-            // 
             // lineStatesControllerBindingSource
             // 
             this.lineStatesControllerBindingSource.DataSource = typeof(StatesDataLibrary.Classes.Controllers.LineStatesController);
+            // 
+            // panelImageContainer
+            // 
+            this.panelImageContainer.AutoScroll = true;
+            this.panelImageContainer.Controls.Add(this.pictureBoxImage);
+            this.panelImageContainer.Location = new System.Drawing.Point(2, 27);
+            this.panelImageContainer.Name = "panelImageContainer";
+            this.panelImageContainer.Size = new System.Drawing.Size(1362, 805);
+            this.panelImageContainer.TabIndex = 4;
+            this.panelImageContainer.Scroll += panelImageContainer_Scroll;
+            this.panelImageContainer.MouseWheel += panelImageContainer_MouserWheel;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1749, 1006);
+            this.Controls.Add(this.panelImageContainer);
             this.Controls.Add(this.panelSignalPath);
             this.Controls.Add(this.panelLinesList);
-            this.Controls.Add(this.pictureBoxImage);
             this.Controls.Add(this.menuMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuMain;
@@ -440,6 +455,7 @@
             this.panelSignalPath.ResumeLayout(false);
             this.panelSignalPath.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lineStatesControllerBindingSource)).EndInit();
+            this.panelImageContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,6 +500,7 @@
         private System.Windows.Forms.ColorDialog colorDialogStateColor;
         private System.Windows.Forms.ToolStripMenuItem saveSignalPathsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadSignalPathsToolStripMenuItem;
+        private System.Windows.Forms.Panel panelImageContainer;
     }
 }
 
