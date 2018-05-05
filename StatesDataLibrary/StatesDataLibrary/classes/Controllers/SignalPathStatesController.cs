@@ -7,7 +7,7 @@ using StatesDataLibrary.Classes.Models.SignalData;
 using System.Windows.Shapes;
 using StatesDataLibrary.Exceptions;
 using System.Text.RegularExpressions;
-using System.Drawing;
+using System.Windows.Media;
 
 namespace StatesDataLibrary.Classes.Controllers
 {
@@ -15,6 +15,51 @@ namespace StatesDataLibrary.Classes.Controllers
     {
         private static SignalPathStates _signalPathStates;
         private static readonly string _pathToFile = "SignalPathStates.xml";
+        private static Dictionary<int, List<Polyline>> _pathStatesCache;
+
+        public static void Initialize()
+        {
+            _signalPathStates = new SignalPathStates(PathToFile);
+
+            InitCache();
+        }
+
+
+        private static void InitCache()
+        {
+            _pathStatesCache = new Dictionary<int, List<Polyline>>();
+            foreach (var state in _signalPathStates.States)
+            {
+                InitCacheState(state);
+            }
+        }
+
+        private static void InitCacheState(KeyValuePair<int, SignalPathState> state)
+        {
+            _pathStatesCache.Add(state.Key, GetCacheState(state.Value));
+        }
+
+        private static List<Polyline> GetCacheState(SignalPathState signalPathState)
+        {
+            List<Polyline> polylines = new List<Polyline>();
+
+            foreach (var item in signalPathState.drawableOnStateLine)
+            {
+                Polyline polyline = new Polyline();
+                SolidColorBrush brush = new SolidColorBrush(Color.FromRgb(item.R, item.G, item.B));
+
+                polyline.Points = LineStatesController.GetLineByIndex(item.Index).PartOfLine.Points.Clone();
+                polyline.Stroke = brush;
+                if (item.Direction == SignalPathLineState.DirectionEnum.Back)
+                {
+                    polyline.Points.Reverse();
+                }
+
+                polylines.Add(polyline);
+            }
+
+            return polylines;
+        }
 
         public static List<SignalLineDrawableState> GetDrawableState(int index)
         {
@@ -25,7 +70,7 @@ namespace StatesDataLibrary.Classes.Controllers
             }
             catch (KeyNotFoundException e)
             {
-                throw new InvalidIndexException("Error, invalid index", e);
+                throw new InvalidIndexException("Error, invalid index ", e);
             }
             
             List<SignalLineDrawableState> result = new List<SignalLineDrawableState>();
@@ -47,6 +92,21 @@ namespace StatesDataLibrary.Classes.Controllers
             return result;
         }
 
+        public static List<Polyline> GetCachedDrawableStateForDrawing(int index)
+        {
+            List<Polyline> drawableOnStateLine;
+            try
+            {
+                drawableOnStateLine = _pathStatesCache[index];
+
+                return drawableOnStateLine;
+            }
+            catch (KeyNotFoundException e)
+            {
+                throw new InvalidIndexException("Error, invalid index ", e);
+            }
+        }
+
         public static void AddSignalPathState(List<SignalPathLineState> lines, int id)
         {
             _signalPathStates.States.Add(id, new SignalPathState(lines));
@@ -54,7 +114,7 @@ namespace StatesDataLibrary.Classes.Controllers
 
         private static string pattern = @"\(\s*([\d]+)\s*,\s*([01])\)";
 
-        public static void AddSignalPathStateFromString(string lines, int id, Color color)
+        public static void AddSignalPathStateFromString(string lines, int id, System.Drawing.Color color)
         {
             Regex regex = new Regex(pattern);
 

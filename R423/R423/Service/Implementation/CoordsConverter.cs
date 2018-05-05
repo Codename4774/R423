@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace R423.Service.Implementation
@@ -52,6 +53,24 @@ namespace R423.Service.Implementation
                 var temp = polyLine.Points[i];
                 Convert(ref temp);
                 polyLine.Points[i] = temp;
+            }
+        }
+
+        public void AddValueToPoints(ref PointCollection points, int addedX, int addedY)
+        {
+            for (int i = 0; i < points.Count(); i++)
+            {
+                points[i] = new Point() { X = points[i].X + addedX, Y = points[i].Y + addedY };
+            }
+        }
+
+        public void Convert(ref PointCollection points)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                var temp = points[i];
+                Convert(ref temp);
+                points[i] = temp;
             }
         }
     }

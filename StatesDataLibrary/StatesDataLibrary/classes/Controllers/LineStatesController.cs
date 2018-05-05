@@ -12,7 +12,12 @@ namespace StatesDataLibrary.Classes.Controllers
     public static class LineStatesController
     {
         private static LinesBase _lineBase;
-        private static readonly string _pathToFile = "LinesCoordinates.xml"; 
+        private static readonly string _pathToFile = "LinesCoordinates.xml";
+
+        public static void Initialize()
+        {
+            _lineBase = new LinesBase(PathToFile);
+        }
 
         public static LineInfo GetLineByIndex(int index)
         {

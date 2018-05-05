@@ -10,17 +10,43 @@
         Title="WindowMain" Height="629.333" Width="1006"
         DataContext="{Binding Path=WindowMainViewModel}">
     <Grid Margin="0,0,0,0">
-        <Canvas Name="CanvasDrawing" HorizontalAlignment="Left" Width="1000" Height="600" VerticalAlignment="Top">
-            <Image  HorizontalAlignment="Left" Width="1000" Height="600" Stretch="Fill"  VerticalAlignment="Top" Source="/R423;component/Resources/skeme.png"/>
-            <Canvas Name="ButtonContainer" HorizontalAlignment="Left" Height="47" Margin="71,533,0,0" VerticalAlignment="Top" Width="235">
-                <Button Command="{Binding CanvasLoadedCommand}" CommandParameter="{Binding ElementName=CanvasDrawing}" Content="Button" Canvas.Left="10" Canvas.Top="10" Width="40"/>
-                <Button Content="Button" Canvas.Left="55" Canvas.Top="10" Width="40"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ToolBarTray Name="ToolbarPanel" Grid.Row="0">
+            <ToolBar>
+                <Button>
+                    <Image Source="/R423;component/Resources/refreshButtonIcon.png" Stretch="Fill"/>
+                </Button>
+                <Button ToolTip="Увеличить">
+                    <Image Source="/R423;component/Resources/incScaleButtonIcon.png" />
+                </Button>
+                <Button ToolTip="Уменьшить">
+                    <Image Source="/R423;component/Resources/decScaleButtonIcon.png" />
+                </Button>
+                <Separator />
+                <ComboBox Name="NameCombo" SelectedIndex="0" SelectionChanged="NameSelectionChanged" />
+                <Separator />
+                <ComboBox Name="SpeedCombo" SelectionChanged="SpeedSelectionChanged" />
+                <Separator />
+                <ComboBox Name="TypeCombo" SelectionChanged="TypeSelectionChanged" />
+                <Separator />
+                <ComboBox Name="DirectionCombo" />
+            </ToolBar>
+        </ToolBarTray>
+        <Canvas Name="CanvasDrawing" HorizontalAlignment="Left" Width="1000" Height="600" VerticalAlignment="Top" Grid.Row="1">
+            <Image HorizontalAlignment="Left" Width="1000" Height="600" Stretch="Fill"  VerticalAlignment="Top" Source="/R423;component/Resources/skeme.png"/>
+            <Canvas Name="ButtonContainer" HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="235" Canvas.Left="71" Canvas.Top="533">
+                <Button Name="ButtonPrevious" Content="Назад" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="50" Canvas.Left="10"/>
+                <Button Name="ButtonNext" Content="Вперёд" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="65" Canvas.Top="5" Width="50"/>
+                <Button Name="buttonDrawAllState" Content="Отрисовать полностью" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="10" Canvas.Top="28" Width="134"/>
             </Canvas>
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding CanvasLoadedCommand}" CommandParameter="{Binding ElementName=CanvasDrawing}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
         </Canvas>
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="Loaded">
-                <i:InvokeCommandAction Command="{Binding CanvasLoadedCommand}" CommandParameter="{Binding ElementName=CanvasDrawing}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
     </Grid>
 </Window>

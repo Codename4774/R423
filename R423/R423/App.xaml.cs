@@ -1,4 +1,6 @@
-﻿using System;
+﻿using R423.Service;
+using StatesDataLibrary.Classes.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,10 @@ namespace R423
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            StatesDataControllerInitializer.Initialize();
+            ServiceProvider.Initialize();
+        }
     }
 }

@@ -9,7 +9,6 @@ namespace StatesDataLibrary.Classes.Models.SignalData
     [Serializable]
     public class SignalPath
     {
-
         public List<int> States;
 
 
