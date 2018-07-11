@@ -41,13 +41,13 @@ namespace R423.ViewModel.Command
                 case "Next":
                     {
                         _selectedDrawableState.OrdinalStateNumber += 1;
-                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex, Direction.Forward);
+                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex/*, Direction.Forward*/);
                     }
                     break;
                 case "Previous":
                     {
                         
-                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex, Direction.Back);
+                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex/*, Direction.Back*/);
                         _selectedDrawableState.OrdinalStateNumber -= 1;
                     }
                     break;

@@ -8,6 +8,7 @@ namespace R423.Service.Interface
 {
     public enum Direction
     {
-        Forward, Back
+        Forward,
+        Back
     }
 }

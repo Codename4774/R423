@@ -57,11 +57,11 @@ namespace R423.Service.Implementation
 
             for (int i = 0; i < signalPath.States.Count; i++)
             {
-                DrawState(i, signalPathIndex, Direction.Forward);
+                DrawState(i, signalPathIndex/*, Direction.Forward*/);
             }
         }
 
-        public void DrawState(int ordinalStateIndex, int signalPathIndex, Direction direction)
+        public void DrawState(int ordinalStateIndex, int signalPathIndex/*, Direction direction*/)
         {
             try
             {
@@ -79,9 +79,9 @@ namespace R423.Service.Implementation
 
                 int stateIndex = signalPath.States[ordinalStateIndex];
 
-                List<Polyline> polylines = SignalPathStatesController.GetCachedDrawableStateForDrawing(stateIndex);
+                List<SignalLineDrawableState> polylines = SignalPathStatesController.GetDrawableState(stateIndex);
 
-                DrawLinesWithAnimation(polylines, direction);
+                DrawLinesWithAnimation(polylines);
             }
             catch (Exception ex)
             {
@@ -89,56 +89,59 @@ namespace R423.Service.Implementation
             }
         }
 
-        private void DrawLinesWithAnimation(List<Polyline> polylines, Direction direction)
+        private void DrawLinesWithAnimation(List<SignalLineDrawableState> lineStates)
         {
             _storyboard.Children.Clear();
 
-            ClearPreviousDrawedEllipses(direction);
+            ClearPreviousDrawedEllipses(/*(Direction)direction*/);
 
             var drawedEllipses = new List<Ellipse>();
 
-            for (int i = 0; i < polylines.Count; i++)
+            for (int i = 0; i < lineStates.Count; i++)
             {
-                DrawLineWithAnimation(polylines[i], direction, drawedEllipses);
+                lineStates[i].Polyline.Stroke = new SolidColorBrush(Color.FromRgb( lineStates[i].Color.R, lineStates[i].Color.G, lineStates[i].Color.B ));
+                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, drawedEllipses);
             }
 
             _lastDrawedEllipses.Add(drawedEllipses);
 
-            _prevDirection = direction;
+            //_prevDirection = (Direction)direction;
 
             _storyboard.Begin();
         }
 
-        private void ClearPreviousDrawedEllipses(Direction direction)
+        private void ClearPreviousDrawedEllipses(/*Direction direction*/)
         {
-            if ((direction == Direction.Forward) && (_lastDrawedEllipses.Count == 1) && (_prevDirection == Direction.Back))
-            {
+            //if ((direction == Direction.Forward) && (_lastDrawedEllipses.Count == 1) && (_prevDirection == Direction.Back))
+            //{
                 RemoveLastDrawedEllipses();
-            }
-            if ((direction == Direction.Back) && (_prevDirection == Direction.Forward))
-            {
-                RemoveLastDrawedEllipses();
-            }
-            if ((direction == Direction.Back) && (_prevDirection == Direction.Back))
-            {
-                RemoveLastDrawedEllipses();
-                RemoveLastDrawedEllipses();
-            }
+            //}
+            //if ((direction == Direction.Back) && (_prevDirection == Direction.Forward))
+            //{
+            //    RemoveLastDrawedEllipses();
+            //}
+            //if ((direction == Direction.Back) && (_prevDirection == Direction.Back))
+            //{
+            //    RemoveLastDrawedEllipses();
+            //    RemoveLastDrawedEllipses();
+            //}
         }
 
         private void DrawLineWithAnimation(Polyline polyline, Direction direction, List<Ellipse> drawedEllipses)
         {
-            var polylineForDrawing = GetPolylineForPathState(polyline, direction);
+            var polylineForDrawingLine = GetPolylineForPathState(polyline, direction);
 
-            polylineForDrawing.Stroke = polyline.Stroke;
+            polylineForDrawingLine.Stroke = polyline.Stroke;
 
-            var ellipse = GetEllipse(polylineForDrawing.Points[0], polyline.Stroke);
+            var ellipse = GetEllipse(polylineForDrawingLine.Points[0], polyline.Stroke);
 
-            DrawLineObjects(polylineForDrawing, ellipse);
+            DrawLineObjects(polylineForDrawingLine, ellipse);
 
             drawedEllipses.Add(ellipse);
 
-            SetAnimationPath(polylineForDrawing.Points, ellipse, polylineForDrawing);
+            var polyLineForDrawingEllipse = GetPolylineForPathState(polyline, direction);
+
+            SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse);
         }
 
         private void DrawLineObjects(Polyline polyline, Ellipse ellipse)
@@ -166,6 +169,7 @@ namespace R423.Service.Implementation
 
         private void SetAnimationPath(PointCollection points, Ellipse ellipse, Polyline polyline)
         {
+
             var pathGeometry = GetPathGeometryFromPoints(points);
 
             var animations = GetAnimationPathForEllipse(pathGeometry, ellipse);
