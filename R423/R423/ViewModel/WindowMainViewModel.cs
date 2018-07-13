@@ -43,6 +43,9 @@ namespace R423.ViewModel
             _drawStateCommand = new DrawStateCommand(_drawManager, _selectedDrawableState);
             _drawSignalPathCommand = new DrawSignalPathCommand(_drawManager, _selectedDrawableState);
             _signalPathChangedCommand = new SignalPathChangedCommand(_selectedDrawableState);
+            _pauseAnimationCommand = new PauseAnimationCommand(_drawManager);
+            _resumeAnimationCommand = new ResumeAnimationCommand(_drawManager);
+            _stopAnimationCommand = new StopAnimationCommand(_drawManager);
 
             _selectedModeDict = new Dictionary<int, SelectedMode>() {
                 { 1, new SelectedMode("Окон-2", "48", "Цифровой 48", "Прием") },
@@ -148,6 +151,33 @@ namespace R423.ViewModel
             get
             {
                 return _signalPathChangedCommand;
+            }
+        }
+
+        private ICommand _pauseAnimationCommand;
+        public ICommand PauseAnimationCommand
+        {
+            get
+            {
+                return _pauseAnimationCommand;
+            }
+        }
+
+        private ICommand _resumeAnimationCommand;
+        public ICommand ResumeAnimationCommand
+        {
+            get
+            {
+                return _resumeAnimationCommand;
+            }
+        }
+
+        private ICommand _stopAnimationCommand;
+        public ICommand StopAnimationCommand
+        {
+            get
+            {
+                return _stopAnimationCommand;
             }
         }
 
