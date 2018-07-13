@@ -45,7 +45,7 @@ namespace R423.GUILinesInfoBuilder
         {
             LineStatesController.LineBase = new LinesBase();
             SignalPathStatesController.SignalPathStates = new SignalPathStates();
-
+            SignalPathsController.SignalPaths = new SignalPaths();
             points = new List<Point>();
             picture = new Bitmap("scheme.png");
             graphics = pictureBoxImage.CreateGraphics();
