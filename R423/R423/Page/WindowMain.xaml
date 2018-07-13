@@ -12,17 +12,31 @@
     <Grid Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Viewbox HorizontalAlignment="Center" Stretch="Uniform"  Grid.Row="1">
+            <Canvas Name="CanvasDrawing" HorizontalAlignment="Left" Width="1000" Height="600" VerticalAlignment="Top" RenderTransformOrigin="0.5, 0.5">
+                <Canvas.RenderTransform>
+                    <ScaleTransform x:Name="CanvasScale" />
+                </Canvas.RenderTransform>
+                <Image Name="ImageScheme" HorizontalAlignment="Left" Width="1000" Height="600" Stretch="Fill" VerticalAlignment="Top" Source="/R423;component/Resources/skeme.png"/>
+                <!--<i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding CanvasLoadedCommand}" CommandParameter="{Binding ElementName=CanvasDrawing}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>-->
+            </Canvas>
+        </Viewbox>
         <ToolBarTray Name="ToolbarPanel" Grid.Row="0">
             <ToolBar>
                 <Button>
                     <Image Source="/R423;component/Resources/refreshButtonIcon.png" Stretch="Fill"/>
                 </Button>
-                <Button ToolTip="Увеличить">
+                <Button ToolTip="Увеличить" Click="ZoomIn_Click">
                     <Image Source="/R423;component/Resources/incScaleButtonIcon.png" />
                 </Button>
-                <Button ToolTip="Уменьшить">
+                <Button ToolTip="Уменьшить" Click="ZoomOut_Click">
                     <Image Source="/R423;component/Resources/decScaleButtonIcon.png" />
                 </Button>
                 <Separator />
@@ -35,18 +49,20 @@
                 <ComboBox Name="DirectionCombo" />
             </ToolBar>
         </ToolBarTray>
-        <Canvas Name="CanvasDrawing" HorizontalAlignment="Left" Width="1000" Height="600" VerticalAlignment="Top" Grid.Row="1">
-            <Image HorizontalAlignment="Left" Width="1000" Height="600" Stretch="Fill"  VerticalAlignment="Top" Source="/R423;component/Resources/skeme.png"/>
-            <Canvas Name="ButtonContainer" HorizontalAlignment="Left" Height="49" VerticalAlignment="Top" Width="235" Canvas.Left="71" Canvas.Top="533">
-                <Button Name="ButtonPrevious" Content="Назад" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="50" Canvas.Left="10"/>
-                <Button Name="ButtonNext" Content="Вперёд" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="65" Canvas.Top="5" Width="50"/>
-                <Button Name="buttonDrawAllState" Content="Отрисовать полностью" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="10" Canvas.Top="28" Width="134"/>
-            </Canvas>
-            <!--<i:Interaction.Triggers>
-                <i:EventTrigger EventName="Loaded">
-                    <i:InvokeCommandAction Command="{Binding CanvasLoadedCommand}" CommandParameter="{Binding ElementName=CanvasDrawing}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>-->
-        </Canvas>
+        <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black" Background="White" HorizontalAlignment="Stretch">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+                <Canvas Name="ButtonContainer" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="200" Canvas.Left="71" Canvas.Top="533" Grid.Column="0">
+                    <Button Name="ButtonPrevious" Content="Назад" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="50" Canvas.Left="35"/>
+                    <Button Name="ButtonNext" Content="Вперёд" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="104" Canvas.Top="5" Width="65"/>
+                    <Button Name="buttonDrawAllState" Content="Отрисовать полностью" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="35" Canvas.Top="28" Width="134"/>
+                </Canvas>
+                <Label Margin= "0,0,130,0" Content="Масштаб:" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                <Slider Name="SliderScale" Margin="0,0,20,0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="100" Maximum="4" Minimum="1" Value="1" TickFrequency="0.5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Column="1" />
+            </Grid>
+        </Border>
     </Grid>
 </Window>

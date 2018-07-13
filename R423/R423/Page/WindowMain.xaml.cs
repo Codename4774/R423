@@ -26,12 +26,22 @@ namespace R423.Page
     /// </summary>
     public partial class WindowMain : Window
     {
+        private Point _lastDragPoint;
+        private float _currentScale = 1;
+        private float MAX_SCALE = 4;
+        private float SCALE_STEP = 0.5F;
+
         public WindowMain()
         {
             InitializeComponent();
             DataContext = new WindowMainViewModel(CanvasDrawing);
             var allModes = (DataContext as WindowMainViewModel).AllModes;
             NameCombo.ItemsSource = allModes.Select(el => el.Name).Distinct();
+
+            CanvasDrawing.MouseLeftButtonDown += DrawingLButton_Down;
+            CanvasDrawing.MouseLeftButtonUp += DrawingLButton_Up;
+            CanvasDrawing.MouseMove += DrawingMouse_Move;
+            CanvasDrawing.MouseWheel += DrawingMouse_Wheel;
         }
 
         private void NameSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,6 +77,63 @@ namespace R423.Page
                                                         el.Speed == (string)SpeedCombo.SelectedItem && 
                                                         el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
             DirectionCombo.SelectedIndex = 0;
+        }
+
+        private void ZoomIn_Click(object sender, RoutedEventArgs e)
+        {
+            _currentScale = _currentScale >= MAX_SCALE ? _currentScale : _currentScale + SCALE_STEP;
+            CanvasScale.ScaleX = _currentScale;
+            CanvasScale.ScaleY = _currentScale;
+            SliderScale.Value = _currentScale;
+        }
+
+        private void ZoomOut_Click(object sender, RoutedEventArgs e)
+        {
+            _currentScale = _currentScale <= 1 ? _currentScale : _currentScale - SCALE_STEP;
+            CanvasScale.ScaleX = _currentScale;
+            CanvasScale.ScaleY = _currentScale;
+            SliderScale.Value = _currentScale;
+        }
+
+        private void DrawingLButton_Down(object sender, MouseButtonEventArgs e)
+        {
+            CanvasDrawing.CaptureMouse();
+        }
+
+        private void DrawingLButton_Up(object sender, MouseButtonEventArgs e)
+        {
+            CanvasDrawing.ReleaseMouseCapture();
+        }
+
+        private void DrawingMouse_Move(object sender, MouseEventArgs e)
+        {
+            var pos = e.GetPosition(CanvasDrawing);
+            if (CanvasDrawing.IsMouseCaptured)
+            {
+                CanvasScale.CenterX -= (pos.X - _lastDragPoint.X) * 1.2;
+                CanvasScale.CenterY -= (pos.Y - _lastDragPoint.Y) * 1.2;
+            }
+            _lastDragPoint = pos;
+        }
+
+        private void DrawingMouse_Wheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+                _currentScale = _currentScale >= MAX_SCALE ? _currentScale : _currentScale + SCALE_STEP;
+            else
+                _currentScale = _currentScale <= 1 ? _currentScale : _currentScale - SCALE_STEP;
+            var pos = e.GetPosition(CanvasDrawing);
+            CanvasScale.CenterX = pos.X - Width/2;
+            CanvasScale.CenterY = pos.Y - Height/2;
+            CanvasScale.ScaleX = _currentScale;
+            CanvasScale.ScaleY = _currentScale;
+            SliderScale.Value = _currentScale;
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            CanvasScale.ScaleX = e.NewValue;
+            CanvasScale.ScaleY = e.NewValue;
         }
     }
 }
