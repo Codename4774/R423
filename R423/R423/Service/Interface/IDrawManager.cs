@@ -12,7 +12,7 @@ namespace R423.Service.Interface
 {
     public interface IDrawManager
     {
-        void DrawState(int stateIndex, int signalPathIndex);
+        void DrawState(int stateIndex, int signalPathIndex, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1);
         void DrawStateRevertDirection(int stateIndex, int signalPathIndex);
         void DrawSignalPath(int signalPathIndex);
         Ellipse GetEllipse(Point coordiante, Brush brush);
