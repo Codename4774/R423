@@ -299,5 +299,26 @@ namespace R423.Service.Implementation
 
             return ellipse;
         }
+
+        public void PauseCurrentAnimation()
+        {
+            _storyboard.Pause();
+        }
+
+        public void ResumeCurrentAnimation()
+        {
+            _storyboard.Resume();
+        }
+
+        public void StopCurrentAnimation()
+        {
+            _storyboard.Stop();
+        }
+
+        public void Clear()
+        {
+            _storyboard.Stop();
+            _drawContextProvider.DrawContext.Children.Clear();
+        }
     }
 }
