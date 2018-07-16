@@ -46,7 +46,13 @@
                 <Separator />
                 <ComboBox Name="TypeCombo" SelectionChanged="TypeSelectionChanged" />
                 <Separator />
-                <ComboBox Name="DirectionCombo" />
+                <ComboBox Name="DirectionCombo" SelectionChanged="DirectionSelectionChanged">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SignalPathChangedCommand}" CommandParameter="{Binding PathNum}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
             </ToolBar>
         </ToolBarTray>
         <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black" Background="White" HorizontalAlignment="Stretch">

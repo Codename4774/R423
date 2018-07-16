@@ -8,13 +8,15 @@ namespace R423.Model
 {
     public class SelectedMode
     {
+        public int Id { get; }
         public string Name { get; }
         public string Type { get; }
         public string Speed { get; }
         public string Direction { get; }
 
-        public SelectedMode(string name, string speed, string type, string direction)
+        public SelectedMode(int id, string name, string speed, string type, string direction)
         {
+            this.Id = id;
             this.Name = name;
             this.Type = type;
             this.Speed = speed;
