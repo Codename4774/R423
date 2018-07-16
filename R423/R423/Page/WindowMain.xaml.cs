@@ -50,7 +50,14 @@ namespace R423.Page
                                                         el.Speed == (string)SpeedCombo.SelectedItem &&
                                                         el.Type == (string)TypeCombo.SelectedItem &&
                                                         el.Direction == (string)DirectionCombo.SelectedItem);
-            return allModesList.IndexOf(pathNum.FirstOrDefault()) + 1 ;
+            try
+            {
+                return pathNum.FirstOrDefault().Id;
+            }
+            catch(NullReferenceException e)
+            {
+                return 1;
+            }
         }
 
         private void NameSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,7 +72,6 @@ namespace R423.Page
             SpeedCombo.SelectedIndex = 0;
             TypeCombo.SelectedIndex = 0;
             DirectionCombo.SelectedIndex = 0;
-            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
         }
 
         private void SpeedSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -78,7 +84,6 @@ namespace R423.Page
                                                         el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
             TypeCombo.SelectedIndex = 0;
             DirectionCombo.SelectedIndex = 0;
-            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
         }
 
         private void TypeSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,7 +93,6 @@ namespace R423.Page
                                                         el.Speed == (string)SpeedCombo.SelectedItem && 
                                                         el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
             DirectionCombo.SelectedIndex = 0;
-            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
         }
 
 

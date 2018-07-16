@@ -1,4 +1,5 @@
 ﻿using R423.Model;
+using R423.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,13 @@ namespace R423.ViewModel.Command
     public class SignalPathChangedCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-
-
         private readonly SelectedDrawableState _selectedDrawableState;
+        private readonly IDrawManager _drawManager;
 
-
-        public SignalPathChangedCommand(SelectedDrawableState selectedDrawableState)
+        public SignalPathChangedCommand(SelectedDrawableState selectedDrawableState, IDrawManager drawManager)
         {
             _selectedDrawableState = selectedDrawableState;
+            _drawManager = drawManager;
         }
 
 
@@ -34,6 +34,8 @@ namespace R423.ViewModel.Command
                 int newIndex = Convert.ToInt32(parameter);
 
                 _selectedDrawableState.SignalPathIndex = newIndex;
+                _drawManager.StopCurrentAnimation();
+                _drawManager.Clear();
             }
             catch (Exception e)
             {

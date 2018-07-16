@@ -43,7 +43,7 @@ namespace R423.ViewModel
 
             _drawStateCommand = new DrawStateCommand(_drawManager, _selectedDrawableState);
             _drawSignalPathCommand = new DrawSignalPathCommand(_drawManager, _selectedDrawableState);
-            _signalPathChangedCommand = new SignalPathChangedCommand(_selectedDrawableState);
+            _signalPathChangedCommand = new SignalPathChangedCommand(_selectedDrawableState, _drawManager);
             _pauseAnimationCommand = new PauseAnimationCommand(_drawManager);
             _resumeAnimationCommand = new ResumeAnimationCommand(_drawManager);
             _stopAnimationCommand = new StopAnimationCommand(_drawManager);
