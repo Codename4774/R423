@@ -55,13 +55,23 @@ namespace R423.Service.Implementation
         {
             SignalPath signalPath = SignalPathsController.GetSignalPath(signalPathIndex);
 
-            for (int i = 0; i < signalPath.States.Count; i++)
+            DrawState(0, signalPathIndex, (nextIndex, signalIndex, statesCount) =>
+                {
+                    DrawNextState(nextIndex, signalIndex, statesCount);
+                }, signalPath.States.Count
+            );
+        }
+        public void DrawNextState(int nextIndex, int signalIndex, int statesCount)
+        {
+            if (nextIndex < statesCount)
             {
-                DrawState(i, signalPathIndex/*, Direction.Forward*/);
+                DrawState(nextIndex, signalIndex, (nextPathIndex, signaPathlIndex, statesPathCount) => {
+                        DrawNextState(nextPathIndex, signaPathlIndex, statesPathCount);
+                    }, statesCount
+                );
             }
         }
-
-        public void DrawState(int ordinalStateIndex, int signalPathIndex/*, Direction direction*/)
+        public void DrawState(int ordinalStateIndex, int signalPathIndex, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             try
             {
@@ -81,7 +91,7 @@ namespace R423.Service.Implementation
 
                 List<SignalLineDrawableState> polylines = SignalPathStatesController.GetDrawableState(stateIndex);
 
-                DrawLinesWithAnimation(polylines);
+                DrawLinesWithAnimation(polylines, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
             }
             catch (Exception ex)
             {
@@ -89,7 +99,7 @@ namespace R423.Service.Implementation
             }
         }
 
-        private void DrawLinesWithAnimation(List<SignalLineDrawableState> lineStates)
+        private void DrawLinesWithAnimation(List<SignalLineDrawableState> lineStates, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             _storyboard.Children.Clear();
 
@@ -100,7 +110,7 @@ namespace R423.Service.Implementation
             for (int i = 0; i < lineStates.Count; i++)
             {
                 lineStates[i].Polyline.Stroke = new SolidColorBrush(Color.FromRgb( lineStates[i].Color.R, lineStates[i].Color.G, lineStates[i].Color.B ));
-                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, drawedEllipses);
+                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, drawedEllipses, ordinalStateIndex, signalPathIndex, i == 0 ? onDrawComplete : null, statesCount);
             }
 
             _lastDrawedEllipses.Add(drawedEllipses);
@@ -127,7 +137,7 @@ namespace R423.Service.Implementation
             //}
         }
 
-        private void DrawLineWithAnimation(Polyline polyline, Direction direction, List<Ellipse> drawedEllipses)
+        private void DrawLineWithAnimation(Polyline polyline, Direction direction, List<Ellipse> drawedEllipses, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             var polylineForDrawingLine = GetPolylineForPathState(polyline, direction);
 
@@ -141,7 +151,7 @@ namespace R423.Service.Implementation
 
             var polyLineForDrawingEllipse = GetPolylineForPathState(polyline, direction);
 
-            SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse);
+            SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
         }
 
         private void DrawLineObjects(Polyline polyline, Ellipse ellipse)
@@ -167,7 +177,7 @@ namespace R423.Service.Implementation
             return new Polyline() { Points = points };
         }
 
-        private void SetAnimationPath(PointCollection points, Ellipse ellipse, Polyline polyline)
+        private void SetAnimationPath(PointCollection points, Ellipse ellipse, Polyline polyline, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
 
             var pathGeometry = GetPathGeometryFromPoints(points);
@@ -179,6 +189,14 @@ namespace R423.Service.Implementation
             foreach (var animation in animations)
             {
                 _storyboard.Children.Add(animation);
+            }
+
+            if (onDrawComplete != null)
+            {
+                animations[0].Completed += (sender, param) =>
+                {
+                    onDrawComplete(ordinalStateIndex + 1, signalPathIndex, statesCount);
+                };
             }
         }
 
@@ -280,6 +298,27 @@ namespace R423.Service.Implementation
             Canvas.SetTop(ellipse, coordinate.Y + (_ellipseRadius / 2) );
 
             return ellipse;
+        }
+
+        public void PauseCurrentAnimation()
+        {
+            _storyboard.Pause();
+        }
+
+        public void ResumeCurrentAnimation()
+        {
+            _storyboard.Resume();
+        }
+
+        public void StopCurrentAnimation()
+        {
+            _storyboard.Stop();
+        }
+
+        public void Clear()
+        {
+            _storyboard.Stop();
+            _drawContextProvider.DrawContext.Children.Clear();
         }
     }
 }
