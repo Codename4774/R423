@@ -26,6 +26,7 @@ namespace R423.ViewModel.Command
         public void Execute(object parameter)
         {
             _drawManager.StopCurrentAnimation();
+            _drawManager.Clear();
         }
     }
 }

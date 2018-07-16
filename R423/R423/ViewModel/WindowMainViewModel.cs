@@ -204,6 +204,11 @@ namespace R423.ViewModel
             }
         }
 
+        public void ResetStateNumber()
+        {
+            _selectedDrawableState.OrdinalStateNumber = -1;
+        }
+
         private void NotifyPropertyChanged([CallerMemberName]String propertyName = "")
         {
             if (PropertyChanged != null)

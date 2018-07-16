@@ -95,6 +95,7 @@ namespace R423.Page
         private void DirectionSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             (DataContext as WindowMainViewModel).PathNum = CurrentPath();
+            (DataContext as WindowMainViewModel).ResetStateNumber();
         }
 
         private void ZoomIn_Click(object sender, RoutedEventArgs e)

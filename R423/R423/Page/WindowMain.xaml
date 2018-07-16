@@ -60,14 +60,20 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
-                <Canvas Name="ButtonContainer" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="200" Canvas.Left="71" Canvas.Top="533" Grid.Column="0">
+                <Canvas Name="ButtonContainerControl" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="200" Canvas.Left="71" Canvas.Top="533" Grid.Column="0">
                     <Button Name="ButtonPrevious" Content="Назад" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="50" Canvas.Left="35"/>
                     <Button Name="ButtonNext" Content="Вперёд" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="104" Canvas.Top="5" Width="65"/>
                     <Button Name="buttonDrawAllState" Content="Отрисовать полностью" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="35" Canvas.Top="28" Width="134"/>
                 </Canvas>
+                <Canvas Name="ButtonContainerAnimation" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="300" Canvas.Left="71" Canvas.Top="533" Grid.Column="1">
+                    <Button Name="ButtonStop" Content="Стоп" Command="{Binding StopAnimationCommand}" CommandParameter="Previous" Canvas.Top="15" Width="80" Canvas.Left="30"/>
+                    <Button Name="ButtonPause" Content="Пауза" Command="{Binding PauseAnimationCommand}" CommandParameter="Next" Canvas.Left="120" Canvas.Top="15" Width="80"/>
+                    <Button Name="buttonResume" Content="Возобновить" Command="{Binding ResumeAnimationCommand}" CommandParameter="Previous" Canvas.Left="210" Canvas.Top="15" Width="80"/>
+                </Canvas>
                 <Label Margin= "0,0,130,0" Content="Масштаб:" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
-                <Slider Name="SliderScale" Margin="0,0,20,0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="100" Maximum="4" Minimum="1" Value="1" TickFrequency="0.5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Column="1" />
+                <Slider Name="SliderScale" Margin="0,0,20,0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="100" Maximum="4" Minimum="1" Value="1" TickFrequency="0.5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" Grid.Column="2" />
             </Grid>
         </Border>
     </Grid>
