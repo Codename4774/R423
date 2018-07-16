@@ -11,6 +11,11 @@ namespace StatesDataLibrary.Classes.Models.SignalData
     {
         public readonly Dictionary<int, SignalPath> Paths;
 
+        public SignalPaths()
+        {
+            Paths = new Dictionary<int, SignalPath>();
+        }
+
         public SignalPaths(string fileName)
         {
             SignalPathSerializeState[] deserializedData = Serializer.DeserializeSignalPathsList(fileName);

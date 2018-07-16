@@ -15,13 +15,15 @@ namespace StatesDataLibrary.Classes.Models.SignalData
         public readonly int Index;
         public readonly DirectionEnum Direction;
         public readonly Color Color;
+        public readonly TypeEnum Type;
 
-        public SignalLineDrawableState(Polyline polyline, int index, DirectionEnum direction, Color color)
+        public SignalLineDrawableState(Polyline polyline, int index, DirectionEnum direction, Color color, TypeEnum type)
         {
             this.Polyline = polyline;
             this.Index = index;
             this.Direction = direction;
             this.Color = color;
+            this.Type = type;
         }
     }
 }

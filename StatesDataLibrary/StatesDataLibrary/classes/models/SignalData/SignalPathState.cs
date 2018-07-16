@@ -25,6 +25,7 @@ namespace StatesDataLibrary.Classes.Models.SignalData
             {
                 result.Append("id: " + Convert.ToString(item.Index));
                 result.Append(" dir: " + Convert.ToString(item.Direction));
+                result.Append(" type:" + Convert.ToString(item.Type));
                 result.Append(" col: " + Convert.ToString(item.Color));
                 result.Append(", ");
             }
@@ -39,10 +40,12 @@ namespace StatesDataLibrary.Classes.Models.SignalData
             for (int i = 0; i < drawableOnStateLine.Count - 1; i++)
             {
                 result.Append("(" + Convert.ToString(drawableOnStateLine[i].Index) + ",");
-                result.Append(Convert.ToString((int)drawableOnStateLine[i].Direction) + "),");
+                result.Append(Convert.ToString((int)drawableOnStateLine[i].Direction) + ",");
+                result.Append(Convert.ToString((int)drawableOnStateLine[i].Type) + "),");
             }
             result.Append("(" + Convert.ToString(drawableOnStateLine[drawableOnStateLine.Count - 1].Index) + ",");
-            result.Append(Convert.ToString((int)drawableOnStateLine[drawableOnStateLine.Count - 1].Direction) + ")");
+            result.Append(Convert.ToString((int)drawableOnStateLine[drawableOnStateLine.Count - 1].Direction) + ",");
+            result.Append(Convert.ToString((int)drawableOnStateLine[drawableOnStateLine.Count - 1].Type) + ")");
 
             return result.ToString();
         }

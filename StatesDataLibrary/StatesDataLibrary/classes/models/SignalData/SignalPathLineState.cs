@@ -15,7 +15,11 @@ namespace StatesDataLibrary.Classes.Models.SignalData
 
         public enum DirectionEnum { Forward, Back }
 
+        public enum TypeEnum { Lines, Block }
+
         public DirectionEnum Direction { get; set; }
+
+        public TypeEnum Type { get; set; }
 
         public byte R { get; set; }
         public byte G { get; set; }
@@ -40,11 +44,12 @@ namespace StatesDataLibrary.Classes.Models.SignalData
             }
         }
 
-        public SignalPathLineState(int index, DirectionEnum direction, Color color)
+        public SignalPathLineState(int index, DirectionEnum direction, Color color, TypeEnum type)
         {
             this.Index = index;
             this.Direction = direction;
             this.Color = color;
+            this.Type = type;
         }
         public SignalPathLineState()
         {

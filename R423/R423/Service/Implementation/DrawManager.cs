@@ -90,7 +90,7 @@ namespace R423.Service.Implementation
                 int stateIndex = signalPath.States[ordinalStateIndex];
 
                 List<SignalLineDrawableState> polylines = SignalPathStatesController.GetDrawableState(stateIndex);
-
+                
                 DrawLinesWithAnimation(polylines, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
             }
             catch (Exception ex)
@@ -110,7 +110,7 @@ namespace R423.Service.Implementation
             for (int i = 0; i < lineStates.Count; i++)
             {
                 lineStates[i].Polyline.Stroke = new SolidColorBrush(Color.FromRgb( lineStates[i].Color.R, lineStates[i].Color.G, lineStates[i].Color.B ));
-                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, drawedEllipses, ordinalStateIndex, signalPathIndex, i == 0 ? onDrawComplete : null, statesCount);
+                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, lineStates[i].Type, drawedEllipses, ordinalStateIndex, signalPathIndex, i == 0 ? onDrawComplete : null, statesCount);
             }
 
             _lastDrawedEllipses.Add(drawedEllipses);
@@ -137,21 +137,39 @@ namespace R423.Service.Implementation
             //}
         }
 
-        private void DrawLineWithAnimation(Polyline polyline, Direction direction, List<Ellipse> drawedEllipses, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
+        private void DrawLineWithAnimation(Polyline polyline, Direction direction, SignalPathLineState.TypeEnum type, List<Ellipse> drawedEllipses, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             var polylineForDrawingLine = GetPolylineForPathState(polyline, direction);
 
             polylineForDrawingLine.Stroke = polyline.Stroke;
+            switch (type)
+            {
+                case SignalPathLineState.TypeEnum.Lines:
+                    {
+                        var ellipse = GetEllipse(polylineForDrawingLine.Points[0], polyline.Stroke);
 
-            var ellipse = GetEllipse(polylineForDrawingLine.Points[0], polyline.Stroke);
+                        DrawLineObjects(polylineForDrawingLine, ellipse);
 
-            DrawLineObjects(polylineForDrawingLine, ellipse);
+                        drawedEllipses.Add(ellipse);
 
-            drawedEllipses.Add(ellipse);
+                        var polyLineForDrawingEllipse = GetPolylineForPathState(polyline, direction);
 
-            var polyLineForDrawingEllipse = GetPolylineForPathState(polyline, direction);
+                        SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
 
-            SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
+                    }
+                    break;
+                case SignalPathLineState.TypeEnum.Block:
+                    {
+                        polylineForDrawingLine.Opacity = 0;
+
+                        polylineForDrawingLine.StrokeThickness = polylineForDrawingLine.StrokeThickness + 1;
+
+                        DrawLineObjects(polylineForDrawingLine);
+
+                        SetLineAnimationOpacity(polylineForDrawingLine, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
+                    }
+                    break;
+            }
         }
 
         private void DrawLineObjects(Polyline polyline, Ellipse ellipse)
@@ -161,6 +179,14 @@ namespace R423.Service.Implementation
                 _drawContextProvider.DrawContext.Children.Add(polyline);
             }
             _drawContextProvider.DrawContext.Children.Add(ellipse);
+        }
+
+        private void DrawLineObjects(Polyline polyline)
+        {
+            if (!_drawContextProvider.DrawContext.Children.Contains(polyline))
+            {
+                _drawContextProvider.DrawContext.Children.Add(polyline);
+            }
         }
 
         private Polyline GetPolylineForPathState(Polyline polyline, Direction direction)
@@ -185,6 +211,24 @@ namespace R423.Service.Implementation
             var animations = GetAnimationPathForEllipse(pathGeometry, ellipse);
 
             animations.Add(GetAnimationForLineProperty(_animationDuration, polyline, new PropertyPath(Polyline.OpacityProperty), 0, 1));
+
+            foreach (var animation in animations)
+            {
+                _storyboard.Children.Add(animation);
+            }
+
+            if (onDrawComplete != null)
+            {
+                animations[0].Completed += (sender, param) =>
+                {
+                    onDrawComplete(ordinalStateIndex + 1, signalPathIndex, statesCount);
+                };
+            }
+        }
+
+        private void SetLineAnimationOpacity(Polyline polyline, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
+        {
+            var animations = GetAnimationLineAppearence(polyline);
 
             foreach (var animation in animations)
             {
@@ -228,6 +272,15 @@ namespace R423.Service.Implementation
             return result;
         }
 
+        private List<DoubleAnimationBase> GetAnimationLineAppearence(DependencyObject dependencyObject)
+        {
+            var result = new List<DoubleAnimationBase>();
+
+            result.Add(GetAnimationForLineProperty(_animationDuration, dependencyObject, new PropertyPath(Polyline.OpacityProperty), 0, 1));
+
+            return result;
+        }
+
         private PathGeometry GetPathGeometryFromPolyline(Polyline polyline, Direction direction)
         {
             PathSegmentCollection segments = new PathSegmentCollection();
@@ -264,6 +317,20 @@ namespace R423.Service.Implementation
             result.Duration = duration;
 
             result.Source = pathAnimationSource;
+
+            Storyboard.SetTarget(result, dependencyObject);
+            Storyboard.SetTargetProperty(result, targetPropertyPath);
+
+            return result;
+        }
+
+        private DoubleAnimation GetAnimationForLineProperty(Duration duration, PathAnimationSource pathAnimationSource, DependencyObject dependencyObject, PropertyPath targetPropertyPath, double from, double to)
+        {
+            var result = new DoubleAnimation();
+
+            result.Duration = duration;
+            result.From = from;
+            result.To = to;
 
             Storyboard.SetTarget(result, dependencyObject);
             Storyboard.SetTargetProperty(result, targetPropertyPath);
@@ -318,7 +385,7 @@ namespace R423.Service.Implementation
         public void Clear()
         {
             _storyboard.Stop();
-            _drawContextProvider.DrawContext.Children.Clear();
+            _drawContextProvider.Clear();
         }
     }
 }

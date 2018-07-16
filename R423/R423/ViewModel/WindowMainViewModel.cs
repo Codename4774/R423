@@ -33,10 +33,10 @@ namespace R423.ViewModel
 
         private readonly IDrawManager _drawManager;
 
-        public WindowMainViewModel(Canvas drawContext)
+        public WindowMainViewModel(Canvas drawContext, Image image)
         {
             _drawManager = ServiceProvider.DrawManager;
-            _drawContextProvider = new DrawContextProvider(drawContext);
+            _drawContextProvider = new DrawContextProvider(drawContext, image);
             _drawManager.DrawContextProvider = _drawContextProvider;
 
             _selectedDrawableState = new SelectedDrawableState() { OrdinalStateNumber = -1, SignalPathIndex = 1 };

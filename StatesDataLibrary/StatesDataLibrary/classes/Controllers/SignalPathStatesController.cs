@@ -84,7 +84,8 @@ namespace StatesDataLibrary.Classes.Controllers
                         LineStatesController.GetLineByIndex(item.Index).PartOfLine,
                         item.Index,
                         item.Direction,
-                        item.Color
+                        item.Color,
+                        item.Type
                     )
                 );
             }
@@ -112,7 +113,7 @@ namespace StatesDataLibrary.Classes.Controllers
             _signalPathStates.States.Add(id, new SignalPathState(lines));
         }
 
-        private static string pattern = @"\(\s*([\d]+)\s*,\s*([01])\)";
+        private static string pattern = @"\(\s*([\d]+)\s*,\s*([01]),\s*([01])\)";
 
         public static void AddSignalPathStateFromString(string lines, int id, System.Drawing.Color color)
         {
@@ -126,7 +127,7 @@ namespace StatesDataLibrary.Classes.Controllers
 
                 while (match.Success)
                 {
-                    parsedLines.Add(new SignalPathLineState(Convert.ToInt32(match.Groups[1].Value), match.Groups[2].Value == "0" ? SignalPathLineState.DirectionEnum.Forward : SignalPathLineState.DirectionEnum.Back, color));
+                    parsedLines.Add(new SignalPathLineState(Convert.ToInt32(match.Groups[1].Value), match.Groups[2].Value == "0" ? SignalPathLineState.DirectionEnum.Forward : SignalPathLineState.DirectionEnum.Back, color,match.Groups[3].Value == "0" ? SignalPathLineState.TypeEnum.Lines : SignalPathLineState.TypeEnum.Block));
                     match = match.NextMatch();
                 }
 

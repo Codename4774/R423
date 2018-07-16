@@ -34,7 +34,7 @@ namespace R423.Page
         public WindowMain()
         {
             InitializeComponent();
-            DataContext = new WindowMainViewModel(CanvasDrawing);
+            DataContext = new WindowMainViewModel(CanvasDrawing, ImageScheme);
             var allModes = (DataContext as WindowMainViewModel).AllModes;
             NameCombo.ItemsSource = allModes.Select(el => el.Name).Distinct();
             CanvasDrawing.MouseLeftButtonDown += DrawingLButton_Down;

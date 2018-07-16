@@ -11,10 +11,12 @@ namespace R423.Service.Implementation
     {
         private readonly Canvas _drawContext;
 
+        private readonly Image _imageSkeme;
 
-        public DrawContextProvider(Canvas canvas)
+        public DrawContextProvider(Canvas canvas, Image imageSkeme)
         {
             _drawContext = canvas;
+            _imageSkeme = imageSkeme;
         }
 
 
@@ -24,6 +26,11 @@ namespace R423.Service.Implementation
             {
                 return _drawContext;
             }
+        }
+        public void Clear()
+        {
+            DrawContext.Children.Clear();
+            DrawContext.Children.Add(_imageSkeme);
         }
     }
 }
