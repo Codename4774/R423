@@ -80,7 +80,10 @@
     <Compile Include="Service\ServiceProvider.cs" />
     <Compile Include="ViewModel\Command\DrawSignalPathCommand.cs" />
     <Compile Include="ViewModel\Command\DrawStateCommand.cs" />
+    <Compile Include="ViewModel\Command\PauseAnimationCommand.cs" />
+    <Compile Include="ViewModel\Command\ResumeAnimationCommand.cs" />
     <Compile Include="ViewModel\Command\SignalPathChangedCommand.cs" />
+    <Compile Include="ViewModel\Command\StopAnimationCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\WindowMainViewModel.cs" />
   </ItemGroup>

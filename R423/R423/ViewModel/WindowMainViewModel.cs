@@ -154,8 +154,7 @@ namespace R423.ViewModel
                 return _signalPathChangedCommand;
             }
         }
-
-<<<<<<< HEAD
+        
         private int _pathNum;
         public int PathNum
         {
@@ -167,7 +166,9 @@ namespace R423.ViewModel
             {
                 _pathNum = value < 1 ? 1 : value;
                 NotifyPropertyChanged("PathNum");
-=======
+            }
+        }
+
         private ICommand _pauseAnimationCommand;
         public ICommand PauseAnimationCommand
         {
@@ -192,7 +193,6 @@ namespace R423.ViewModel
             get
             {
                 return _stopAnimationCommand;
->>>>>>> a88d3b87060407276de2d933d10c63d523b85c83
             }
         }
 
