@@ -53,6 +53,7 @@ namespace R423.Service.Implementation
 
         public void DrawSignalPath(int signalPathIndex)
         {
+            _drawContextProvider.Clear();
             SignalPath signalPath = SignalPathsController.GetSignalPath(signalPathIndex);
 
             DrawState(0, signalPathIndex, (nextIndex, signalIndex, statesCount) =>
