@@ -67,6 +67,9 @@
     </Compile>
     <Compile Include="Model\SelectedDrawableState.cs" />
     <Compile Include="Model\SelectedMode.cs" />
+    <Compile Include="Page\InfoWindow.xaml.cs">
+      <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources.Designer.cs" />
     <Compile Include="Service\Implementation\CoordsConverter.cs" />
     <Compile Include="Service\Implementation\DrawContextProvider.cs" />
@@ -119,6 +122,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Page\InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\WindowMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

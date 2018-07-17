@@ -40,11 +40,29 @@
                     <Image Source="/R423;component/Resources/decScaleButtonIcon.png" />
                 </Button>
                 <Separator />
-                <ComboBox Name="NameCombo" SelectedIndex="0" SelectionChanged="NameSelectionChanged" />
+                <ComboBox Name="NameCombo" SelectedIndex="0" SelectionChanged="NameSelectionChanged">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SignalPathChangedCommand}" CommandParameter="{Binding PathNum}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
                 <Separator />
-                <ComboBox Name="SpeedCombo" SelectionChanged="SpeedSelectionChanged" />
+                <ComboBox Name="SpeedCombo" SelectionChanged="SpeedSelectionChanged">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SignalPathChangedCommand}" CommandParameter="{Binding PathNum}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
                 <Separator />
-                <ComboBox Name="TypeCombo" SelectionChanged="TypeSelectionChanged" />
+                <ComboBox Name="TypeCombo" SelectionChanged="TypeSelectionChanged">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SignalPathChangedCommand}" CommandParameter="{Binding PathNum}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
                 <Separator />
                 <ComboBox Name="DirectionCombo" SelectionChanged="DirectionSelectionChanged">
                     <i:Interaction.Triggers>
