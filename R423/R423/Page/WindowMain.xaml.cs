@@ -72,6 +72,8 @@ namespace R423.Page
             SpeedCombo.SelectedIndex = 0;
             TypeCombo.SelectedIndex = 0;
             DirectionCombo.SelectedIndex = 0;
+            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
+            (DataContext as WindowMainViewModel).ResetStateNumber();
         }
 
         private void SpeedSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,6 +86,8 @@ namespace R423.Page
                                                         el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
             TypeCombo.SelectedIndex = 0;
             DirectionCombo.SelectedIndex = 0;
+            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
+            (DataContext as WindowMainViewModel).ResetStateNumber();
         }
 
         private void TypeSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,6 +97,8 @@ namespace R423.Page
                                                         el.Speed == (string)SpeedCombo.SelectedItem && 
                                                         el.Type == (string)TypeCombo.SelectedItem).Select(el => el.Direction).Distinct();
             DirectionCombo.SelectedIndex = 0;
+            (DataContext as WindowMainViewModel).PathNum = CurrentPath();
+            (DataContext as WindowMainViewModel).ResetStateNumber();
         }
 
 
