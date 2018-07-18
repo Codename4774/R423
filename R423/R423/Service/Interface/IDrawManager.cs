@@ -19,6 +19,7 @@ namespace R423.Service.Interface
         void PauseCurrentAnimation();
         void ResumeCurrentAnimation();
         void StopCurrentAnimation();
+        void SetSpeed(double speedValue);
         void Clear();
         DrawContextProvider DrawContextProvider { set; }
     }

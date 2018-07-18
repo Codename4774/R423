@@ -196,6 +196,11 @@ namespace R423.ViewModel
             }
         }
 
+        public void SetSpeed(double value)
+        {
+            _drawManager.SetSpeed(value);
+        }
+
         public List<SelectedMode> AllModes
         {
             get

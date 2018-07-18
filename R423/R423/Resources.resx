@@ -136,7 +136,10 @@
   <data name="yPictureSize" xml:space="preserve">
     <value>2298</value>
   </data>
-  <data name="animationDurationSeconds" xml:space="preserve">
+  <data name="animationLineDrawingDurationSeconds" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="animationBlocksApperanceDurationSeconds" xml:space="preserve">
+    <value>3</value>
   </data>
 </root>
