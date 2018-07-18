@@ -18,6 +18,7 @@ using StatesDataLibrary.Classes.Models.LinesInfo;
 using R423.Service.Implementation;
 using System.Reflection;
 using System.Windows.Interactivity;
+using System.Xml.Linq;
 
 namespace R423.Page
 {
@@ -159,10 +160,22 @@ namespace R423.Page
             SliderScale.Value = _currentScale;
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SliderScale_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             CanvasScale.ScaleX = e.NewValue;
             CanvasScale.ScaleY = e.NewValue;
+        }
+
+        private void ImageScheme_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var pos = e.GetPosition(CanvasDrawing);
+            var doc = XElement.Load("info.xml");
+
+            var t = from el in doc.Elements("item")
+                    where (int)(el.Attribute("x_start")) < pos.X && (int)(el.Attribute("x_end")) > pos.X &&
+                          (int)(el.Attribute("y_start")) < pos.Y && (int)(el.Attribute("y_end")) > pos.Y
+                    select el;
+           
         }
     }
 }
