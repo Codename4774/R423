@@ -8,8 +8,14 @@
         Title="InfoWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <WebBrowser Name="Web" Margin="20" Grid.ColumnSpan="2" Grid.RowSpan="2" ></WebBrowser>
     </Grid>
 </Window>

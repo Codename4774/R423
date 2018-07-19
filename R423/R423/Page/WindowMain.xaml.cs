@@ -171,11 +171,11 @@ namespace R423.Page
             var pos = e.GetPosition(CanvasDrawing);
             var doc = XElement.Load("info.xml");
 
-            var t = from el in doc.Elements("item")
+            var elem = from el in doc.Elements("item")
                     where (int)(el.Attribute("x_start")) < pos.X && (int)(el.Attribute("x_end")) > pos.X &&
                           (int)(el.Attribute("y_start")) < pos.Y && (int)(el.Attribute("y_end")) > pos.Y
                     select el;
-           
+            new InfoWindow((int)elem.First().Attribute("id")).Show();
         }
     }
 }
