@@ -18,7 +18,9 @@ namespace R423.Service.Implementation
     {
         private const int _ellipseRadius = 9;
 
-        private Duration _animationDuration;
+        private Duration _animationLineDrawingDuration;
+
+        private Duration _animationBlockApperanceDuration;
 
         private Storyboard _storyboard;
 
@@ -45,7 +47,8 @@ namespace R423.Service.Implementation
         {
             _coordsConverter = coordsConverter;
             _resourceManager = resourceManager;
-            _animationDuration = TimeSpan.FromSeconds(_resourceManager.GetInt("animationDurationSeconds"));
+            _animationLineDrawingDuration = TimeSpan.FromSeconds(_resourceManager.GetInt("animationLineDrawingDurationSeconds"));
+            _animationBlockApperanceDuration = TimeSpan.FromSeconds(_resourceManager.GetInt("animationBlocksApperanceDurationSeconds"));
             _storyboard = new Storyboard();
             _lastDrawedEllipses = new List<List<Ellipse>>();
             _prevDirection = Direction.Forward;
@@ -211,7 +214,7 @@ namespace R423.Service.Implementation
 
             var animations = GetAnimationPathForEllipse(pathGeometry, ellipse);
 
-            animations.Add(GetAnimationForLineProperty(_animationDuration, polyline, new PropertyPath(Polyline.OpacityProperty), 0, 1));
+            animations.Add(GetAnimationForLineProperty(_animationBlockApperanceDuration, polyline, new PropertyPath(Polyline.OpacityProperty), 0, 1));
 
             foreach (var animation in animations)
             {
@@ -266,9 +269,9 @@ namespace R423.Service.Implementation
         {
             var result = new List<DoubleAnimationBase>();
 
-            result.Add(GetAnimationForLineProperty(pathGeometry, _animationDuration, PathAnimationSource.X, dependencyObject, new PropertyPath(Canvas.LeftProperty)));
+            result.Add(GetAnimationForLineProperty(pathGeometry, _animationLineDrawingDuration, PathAnimationSource.X, dependencyObject, new PropertyPath(Canvas.LeftProperty)));
 
-            result.Add(GetAnimationForLineProperty(pathGeometry, _animationDuration, PathAnimationSource.Y, dependencyObject, new PropertyPath(Canvas.TopProperty)));
+            result.Add(GetAnimationForLineProperty(pathGeometry, _animationLineDrawingDuration, PathAnimationSource.Y, dependencyObject, new PropertyPath(Canvas.TopProperty)));
 
             return result;
         }
@@ -277,7 +280,7 @@ namespace R423.Service.Implementation
         {
             var result = new List<DoubleAnimationBase>();
 
-            result.Add(GetAnimationForLineProperty(_animationDuration, dependencyObject, new PropertyPath(Polyline.OpacityProperty), 0, 1));
+            result.Add(GetAnimationForLineProperty(_animationBlockApperanceDuration, dependencyObject, new PropertyPath(Polyline.OpacityProperty), 0, 1));
 
             return result;
         }
@@ -387,6 +390,11 @@ namespace R423.Service.Implementation
         {
             _storyboard.Stop();
             _drawContextProvider.Clear();
+        }
+
+        public void SetSpeed(double speedValue)
+        {
+            _storyboard.SpeedRatio = speedValue;
         }
     }
 }

@@ -166,6 +166,16 @@ namespace R423.Page
             CanvasScale.ScaleY = e.NewValue;
         }
 
+        private void SliderSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            
+            var viewModel = (WindowMainViewModel)DataContext;
+            if (viewModel != null)
+            {
+                viewModel.SetSpeed(e.NewValue);
+            }
+        }
+
         private void ImageScheme_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             var pos = e.GetPosition(CanvasDrawing);

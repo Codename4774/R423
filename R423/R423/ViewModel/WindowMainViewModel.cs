@@ -109,14 +109,14 @@ namespace R423.ViewModel
                 { new SelectedMode(0, "Узл-1", "2x480", "Цифровой 48", "ЦТРС 2") },
                 { new SelectedMode(0, "Узл-1", "2x480", "Аналоговый 48", "ЦТРС 1") },
                 { new SelectedMode(0, "Узл-1", "2x480", "Аналоговый 48", "ЦТРС 2") },
-                { new SelectedMode(0, "Ретр-2", "48", "Цифровой 48", "ЦТРС 1") },
-                { new SelectedMode(0, "Ретр-2", "48", "Цифровой 48", "ЦТРС 2") },
-                { new SelectedMode(0, "Ретр-2", "480", "Цифровой 480", "ЦТРС 1") },
-                { new SelectedMode(0, "Ретр-2", "480", "Цифровой 480", "ЦТРС 2") },
+                { new SelectedMode(39, "Ретр-2", "48", "Цифровой 48", "ЦТРС 1") },
+                { new SelectedMode(40, "Ретр-2", "48", "Цифровой 48", "ЦТРС 2") },
+                { new SelectedMode(41, "Ретр-2", "480", "Цифровой 480", "ЦТРС 1") },
+                { new SelectedMode(42, "Ретр-2", "480", "Цифровой 480", "ЦТРС 2") },
                 { new SelectedMode(0, "Ретр-2", "2x480", "Цифровой 480x2", "ЦТРС 1") },
                 { new SelectedMode(0, "Ретр-2", "2x480", "Цифровой 480x2", "ЦТРС 2") },
-                { new SelectedMode(0, "Ретр-2", "2048", "2048 внешний", "ЦТРС 1") },
-                { new SelectedMode(0, "Ретр-2", "2048", "2048 внешний", "ЦТРС 2") },
+                { new SelectedMode(41, "Ретр-2", "2048", "2048 внешний", "ЦТРС 1") },
+                { new SelectedMode(42, "Ретр-2", "2048", "2048 внешний", "ЦТРС 2") },
                 { new SelectedMode(37, "Ретр-1", "48", "Цифровой 48", "ЦТРС А->Б") },
                 { new SelectedMode(38, "Ретр-1", "48", "Цифровой 48", "ЦТРС Б->А") },
                 { new SelectedMode(37, "Ретр-1", "480", "Цифровой 480", "ЦТРС А->Б") },
@@ -194,6 +194,11 @@ namespace R423.ViewModel
             {
                 return _stopAnimationCommand;
             }
+        }
+
+        public void SetSpeed(double value)
+        {
+            _drawManager.SetSpeed(value);
         }
 
         public List<SelectedMode> AllModes
