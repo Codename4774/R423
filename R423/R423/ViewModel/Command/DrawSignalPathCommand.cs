@@ -29,6 +29,10 @@ namespace R423.ViewModel.Command
 
         public void Execute(object parameter)
         {
+            if (_drawManager.CurrentDrawingProcess == CurrentDrawingProcess.Handle)
+            {
+                _drawManager.Clear();
+            }
             _selectedDrawableState.OrdinalStateNumber = -1;
             _drawManager.DrawSignalPath(_selectedDrawableState.SignalPathIndex);
         }

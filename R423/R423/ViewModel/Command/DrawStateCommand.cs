@@ -36,19 +36,22 @@ namespace R423.ViewModel.Command
 
         public void Execute(object parameter)
         {
+            if (_drawManager.CurrentDrawingProcess == CurrentDrawingProcess.Automatic)
+            {
+                _drawManager.Clear();
+            }
             switch ((string)parameter)
             {
                 case "Next":
                     {
                         _selectedDrawableState.OrdinalStateNumber += 1;
-                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex/*, Direction.Forward*/);
+                        _selectedDrawableState.OrdinalStateNumber = _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber,_selectedDrawableState.SignalPathIndex, Direction.Forward, true);
                     }
                     break;
                 case "Previous":
                     {
-                        
-                        _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex/*, Direction.Back*/);
                         _selectedDrawableState.OrdinalStateNumber -= 1;
+                        _selectedDrawableState.OrdinalStateNumber = _drawManager.DrawState(_selectedDrawableState.OrdinalStateNumber, _selectedDrawableState.SignalPathIndex, Direction.Back, true);
                     }
                     break;
             }

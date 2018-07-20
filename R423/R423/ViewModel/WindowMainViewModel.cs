@@ -46,7 +46,7 @@ namespace R423.ViewModel
             _signalPathChangedCommand = new SignalPathChangedCommand(_selectedDrawableState, _drawManager);
             _pauseAnimationCommand = new PauseAnimationCommand(_drawManager);
             _resumeAnimationCommand = new ResumeAnimationCommand(_drawManager);
-            _stopAnimationCommand = new StopAnimationCommand(_drawManager);
+            _stopAnimationCommand = new StopAnimationCommand(_selectedDrawableState, _drawManager);
 
             _selectedModeList = new List<SelectedMode>() {
                 { new SelectedMode(1, "Окон-2", "48", "Цифровой 48", "Прием") },

@@ -73,6 +73,7 @@
     <Compile Include="Service\Implementation\DrawManager.cs" />
     <Compile Include="Service\Implementation\DrawStateCompletedDelegate.cs" />
     <Compile Include="Service\Implementation\ResourceManager.cs" />
+    <Compile Include="Service\Interface\CurrentDrawingProcess.cs" />
     <Compile Include="Service\Interface\Direction.cs" />
     <Compile Include="Service\Interface\ICoordsConverter.cs" />
     <Compile Include="Service\Interface\IDrawManager.cs" />
