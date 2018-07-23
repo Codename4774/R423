@@ -114,10 +114,10 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-00-39-struct.png" desc="Функциональная схема антенно-волноводного устройства"/>
+			<image src="/Resources/schemes/d-00-39-struct.png" desc="Функциональная схема антенно-волноводного устройства"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-00-40.JPG" desc="Стойка Д-00-40"/>
+			<image src="/Resources/photos/d-00-40.JPG" desc="Стойка Д-00-40"/>
 		</imageset>
 	</item>
 	<item id="8" name="Д-53Б" x_start="205" x_end="224" y_start="27" y_end="63">
@@ -143,11 +143,11 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-53b-struct.png" desc="Структурная схема усилителя мощности (стойка Д-53Б)" />
+			<image src="/Resources/schemes/d-53b-struct.png" desc="Структурная схема усилителя мощности (стойка Д-53Б)" />
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-53-a.JPG" desc="Стойка Д-53-Б"/>
-			<image src="photos/d-53-inside.JPG" desc="Стойка Д-53-Б. Внутренние блоки"/>
+			<image src="/Resources/photos/d-53-a.JPG" desc="Стойка Д-53-Б"/>
+			<image src="/Resources/photos/d-53-inside.JPG" desc="Стойка Д-53-Б. Внутренние блоки"/>
 		</imageset>
 	</item>
 	<item id="9" name="Д-16" x_start="229" x_end="241" y_start="59" y_end="76" />
@@ -179,10 +179,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/mshu.JPG" desc="Малошумящий усилитель"/>
+			<image src="/Resources/photos/mshu.JPG" desc="Малошумящий усилитель"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/mshu.png" desc="Структурная схема МШУ"/>
+			<image src="/Resources/schemes/mshu.png" desc="Структурная схема МШУ"/>
 		</imageset>
 	</item>
 	<item id="12" name="СНБ-05-10" x_start="267" x_end="292" y_start="38" y_end="50">
@@ -208,10 +208,10 @@
 			выдает сигнал аварии. Коэффициент усиления блока не менее 26 дБ. Неравномерность АЧХ во всем диапазоне усиливаемых частот не более 7 дБ.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-12-05a-func.png" desc="Функциональная схема блока Д-12-05А"/>
+			<image src="/Resources/schemes/d-12-05a-func.png" desc="Функциональная схема блока Д-12-05А"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-12-05-a.jpg" desc="Блок Д-12-05А"/>
+			<image src="/Resources/photos/d-12-05-a.jpg" desc="Блок Д-12-05А"/>
 		</imageset>
 	</item>
 	<item id="14" name="Д-55-04" x_start="334" x_end="358" y_start="38" y_end="50">
@@ -228,10 +228,10 @@
 			рабочих частот станции.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-04-struct.png" desc="Структурная схема Д-55-04"/>
+			<image src="/Resources/schemes/d-55-04-struct.png" desc="Структурная схема Д-55-04"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-04.JPG" desc="Блок Д-55-04"/>
+			<image src="/Resources/photos/d-55-04.JPG" desc="Блок Д-55-04"/>
 		</imageset>
 	</item>
 	<item id="15" name="Д-55-01" x_start="301" x_end="325" y_start="56" y_end="68">
@@ -244,7 +244,7 @@
 			Фиксированным частотам присвоены условные номера от 55 до 409.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-01.JPG" desc="Блок Д-55-01"/>
+			<image src="/Resources/photos/d-55-01.JPG" desc="Блок Д-55-01"/>
 		</imageset>
 	</item>
 	<item id="16" name="Д-46-02" x_start="301" x_end="325" y_start="73" y_end="79">
@@ -257,11 +257,11 @@
 			сигнала возбудителя Д-55-01М. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-02.JPG" desc="Блок Д-46-02"/>
+			<image src="/Resources/photos/d-46-02.JPG" desc="Блок Д-46-02"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
-			<image src="schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
 		</imageset>
 	</item>
 	<item id="17" name="Д-46-02" x_start="301" x_end="325" y_start="82" y_end="88">
@@ -274,11 +274,11 @@
 			сигнала возбудителя Д-55-01М. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-02.JPG" desc="Блок Д-46-02"/>
+			<image src="/Resources/photos/d-46-02.JPG" desc="Блок Д-46-02"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
-			<image src="schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
 		</imageset>
 	</item>
 	<item id="18" name="Д-16-00-02" x_start="268" x_end="292" y_start="75" y_end="88">
@@ -297,10 +297,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-00-02.JPG" desc="Кассета Д-46-00-02М"/>
+			<image src="/Resources/photos/d-46-00-02.JPG" desc="Кассета Д-46-00-02М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-00-02m.png" desc="Структурная схема Д-46-00-02М"/>
+			<image src="/Resources/schemes/d-46-00-02m.png" desc="Структурная схема Д-46-00-02М"/>
 		</imageset>
 	</item>
 	<item id="19" name="Д-45-00-01" x_start="346" x_end="377" y_start="67" y_end="94">
@@ -319,10 +319,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-00-01.JPG" desc="Кассета Д-46-00-01М"/>
+			<image src="/Resources/photos/d-46-00-01.JPG" desc="Кассета Д-46-00-01М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-00-01m.png" desc="Структурная схема Д-46-00-01М"/>
+			<image src="/Resources/schemes/d-46-00-01m.png" desc="Структурная схема Д-46-00-01М"/>
 		</imageset>
 	</item>
 	<item id="20" name="Д-55-01" x_start="301" x_end="325" y_start="94" y_end="105">
@@ -335,7 +335,7 @@
 			Фиксированным частотам присвоены условные номера от 55 до 409.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-01.JPG" desc="Блок Д-55-01"/>
+			<image src="/Resources/photos/d-55-01.JPG" desc="Блок Д-55-01"/>
 		</imageset>
 	</item>
 	<item id="21" name="Д-55-00-11" x_start="253" x_end="264" y_start="54" y_end="105">
@@ -350,10 +350,10 @@
 			<li>fпрм = fгет – 820 МГц.</li></ul>]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-00-11.JPG" desc="Кассета Д-55-00-11"/>
+			<image src="/Resources/photos/d-55-00-11.JPG" desc="Кассета Д-55-00-11"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-11.png" desc="Cтруктурная схема Д-55-00-11"/>
+			<image src="/Resources/schemes/d-55-00-11.png" desc="Cтруктурная схема Д-55-00-11"/>
 		</imageset>
 	</item>
 	<item id="22" name="Д-55-00-06" x_start="268" x_end="292" y_start="112" y_end="124">
@@ -369,10 +369,10 @@
 			ФМ ШПС в диапазоне рабочих волн и его перенос на среднюю частоту 820 МГц. Сигнал первого гетеродина формируется в блоке Д-55-01М.]]>
 		</desc>
 		 <imageset type="scheme">
-			<image src="schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
+			<image src="/Resources/schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
+			<image src="/Resources/photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
 		</imageset>
 	</item>
 	<item id="23" name="Д-55-00-06" x_start="301" x_end="325" y_start="112" y_end="124">
@@ -388,10 +388,10 @@
 			ФМ ШПС в диапазоне рабочих волн и его перенос на среднюю частоту 820 МГц. Сигнал первого гетеродина формируется в блоке Д-55-01М.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
+			<image src="/Resources/schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
+			<image src="/Resources/photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
 		</imageset>
 	</item>
 	<item id="24" name="Д-55-00-15" x_start="334" x_end="358" y_start="112" y_end="124">
@@ -399,15 +399,15 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			В ячейке Д-55-00-15, куда поступает сигнал второй промежуточной частоты, осуществляется основное усиление сигнала ПЧ-2, формирование АЧХ линейного тракта приемника с помощью фильтра сосредоточенной селекции и ручная или автоматическая регулировка усиления.
 			Управляющее напряжение для электронного аттенюатора АРУ формируется в демодуляторе стойки Д-38А. С выхода ячейки Д-55-00-15 ФМ ШПС на средней частоте 70 МГц поступает на демодулятор стойки Д-38А.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-15-func.png" desc="Функциональная схема Д-55-00-06Д"/>
+			<image src="/Resources/schemes/d-55-00-15-func.png" desc="Функциональная схема Д-55-00-06Д"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-15.JPG" desc="Д-55-00-15"/>
+			<image src="/Resources/photos/d-55-00-15.JPG" desc="Д-55-00-15"/>
 		</imageset>
 	</item>
 	<item id="25" name="Д-55 М" x_start="246" x_end="383" y_start="8" y_end="134">
@@ -415,7 +415,7 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			Стойка транспонирования частоты Д-55М предназначена:
 			<ul>
 			<li>для усиления ФМ ШПС типа ЧВМ, поступающего с выхода модулятора станции, с последующим его преобразованием в сигнал рабочего диапазона;</li>
@@ -433,10 +433,10 @@
 			<li>потребляемая мощность – 400 Вт (от сети 380 В), 30 Вт (по цепи +27 В).</li></ul>]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55.JPG" desc="Стойка Д-55М"/>
+			<image src="/Resources/photos/d-55.JPG" desc="Стойка Д-55М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-55m-struct.png" desc="Структурная схема стойки Д-55М"/>
+			<image src="/Resources/schemes/d-55m-struct.png" desc="Структурная схема стойки Д-55М"/>
 		</imageset>
 	</item>
 	<item id="26" name="Д-60" x_start="397" x_end="451" y_start="46" y_end="66">
@@ -444,18 +444,18 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			Стойка Д-60 предназначена для электропитания оборудования станции напряжением 27 В. На вход стойки подается переменное 3-фазное напряжение 380 В.
 			Стойка состоит из двух блоков СДУ-А и блока Д-60-01. Кроме указанных блоков в верхней части стойки расположены 18 кассет с ЗИП-ом, не участвующие в работе
 			стойки Д-60. Стойка обеспечивает стабильное напряжение 27±1,62 В при максимальном потребляемом токе 5,5 А и нестабилизированное напряжение 27±10% при максимальном
 			потребляемом токе 56 А. Выходное напряжение 27 В со стойки Д-60 подается на стойку Д-59 для распределения по потребителям.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-60-top.JPG" desc="Стойка Д-60. Кассеты с ЗИП-ом"/>
-			<image src="photos/d-60.JPG" desc="Стойка Д-60"/>
+			<image src="/Resources/photos/d-60-top.JPG" desc="Стойка Д-60. Кассеты с ЗИП-ом"/>
+			<image src="/Resources/photos/d-60.JPG" desc="Стойка Д-60"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-60.png" desc="Структурная схема Д-60"/>
+			<image src="/Resources/schemes/d-60.png" desc="Структурная схема Д-60"/>
 		</imageset>
 	</item>
 	<item id="27" name="Д-59" x_start="465" x_end="533" y_start="46" y_end="66">
@@ -463,7 +463,7 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			Стойка Д-59 предназначена для обеспечения питающим напряжением потребителей станции и обеспечивает:<ul>
 			<li>ввод переменного трехфазного напряжения от источника;</li>
 			<li>подключение станции и отдельных потребителей к источнику;</li>
@@ -474,11 +474,11 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-59-top.JPG" desc="Стойка Д-59. Верхняя часть"/>
-			<image src="photos/d-59.JPG" desc="Стойка Д-59"/>
+			<image src="/Resources/photos/d-59-top.JPG" desc="Стойка Д-59. Верхняя часть"/>
+			<image src="/Resources/photos/d-59.JPG" desc="Стойка Д-59"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-59.png" desc="Функциональная схема Д-59"/>
+			<image src="/Resources/schemes/d-59.png" desc="Функциональная схема Д-59"/>
 		</imageset>
 	</item>
 	<item id="28" name="Д-65" x_start="548" x_end="601" y_start="46" y_end="66">
@@ -486,11 +486,11 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			Силовой щит вспомогательного оборудования Д-65]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-65-m.JPG" desc="Силовой щит вспомогательного оборудования Д-65"/>
+			<image src="/Resources/photos/d-65-m.JPG" desc="Силовой щит вспомогательного оборудования Д-65"/>
 		</imageset>
 	</item>
 	<item id="29" name="Д-24-02" x_start="458" x_end="541" y_start="9" y_end="38">
@@ -498,7 +498,7 @@
 			<![CDATA[
 			<head>
 				<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-			</head
+			</head>
 			Силовой щит Д-24-02]]>
 		</desc>
 	</item>
@@ -521,7 +521,7 @@
 			Кассета Д-38-01-17 – кассета-перемычка<]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-17.JPG" desc="Кассета Д-38-01-17 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-17.JPG" desc="Кассета Д-38-01-17 в составе стойки Д-38-01А"/>
 		</imageset>
 	</item>
 	<item id="32" name="Д-38-01-01" x_start="471" x_end="495" y_start="132" y_end="143">
@@ -538,10 +538,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="33" name="Д-38-01-01" x_start="504" x_end="528" y_start="132" y_end="143">
@@ -558,10 +558,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="34" name="Д-38-01-17" x_start="551" x_end="576" y_start="132" y_end="143">
@@ -573,7 +573,7 @@
 			Кассета Д-38-01-17 – кассета-перемычка]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-17.JPG" desc="Кассета Д-38-01-17 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-17.JPG" desc="Кассета Д-38-01-17 в составе стойки Д-38-01А"/>
 		</imageset>
 	</item>
 	<item id="35" name="Д-38-02-A" x_start="419" x_end="451" y_start="153" y_end="189">
@@ -599,10 +599,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-02a.JPG" desc="Стойка Д-38-02-А"/>
+			<image src="/Resources/photos/d-38-02a.JPG" desc="Стойка Д-38-02-А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-02-a.png" desc="Cтруктурная схема Д-38-02-a"/>
+			<image src="/Resources/schemes/d-38-02-a.png" desc="Cтруктурная схема Д-38-02-a"/>
 		</imageset>
 	</item>
 	<item id="36" name="Д-38-02-A" x_start="548" x_end="580" y_start="153" y_end="189">
@@ -628,10 +628,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-02a.JPG" desc="Стойка Д-38-02-А"/>
+			<image src="/Resources/photos/d-38-02a.JPG" desc="Стойка Д-38-02-А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-02-a.png" desc="Cтруктурная схема Д-38-02-a"/>
+			<image src="/Resources/schemes/d-38-02-a.png" desc="Cтруктурная схема Д-38-02-a"/>
 		</imageset>
 	</item>
 	<item id="37" name="Д-38-01-01" x_start="471" x_end="495" y_start="153" y_end="165">
@@ -648,10 +648,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="38" name="Д-38-01-01" x_start="504" x_end="528" y_start="153" y_end="165">
@@ -668,10 +668,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="39" name="Д-38-01-01" x_start="471" x_end="495" y_start="178" y_end="189">
@@ -688,10 +688,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="40" name="Д-38-01-01" x_start="504" x_end="528" y_start="178" y_end="189">
@@ -708,10 +708,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
+			<image src="/Resources/photos/d-38-01-01.JPG" desc="Кассета Д-38-01-01 в составе стойки Д-38-01А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
+			<image src="/Resources/schemes/d-38-01-01.png" desc="Cтруктурная схема Д-38-01-01"/>
 		</imageset>
 	</item>
 	<item id="41" name="Д-38-A" x_start="410" x_end="589" y_start="122" y_end="195">
@@ -772,14 +772,14 @@
 			]]>
 		</desc>
 		 <imageset type="scheme">
-			<image src="schemes/d-38a-struct.png" desc="Структкрная схема стойки Д-38А"/>
+			<image src="/Resources/schemes/d-38a-struct.png" desc="Структкрная схема стойки Д-38А"/>
 		</imageset>
 		<imageset type="photo">      
-			<image src="photos/d-38-01a.JPG" desc=""/>
-			<image src="photos/d-38-02-2.JPG" desc=""/>
-			<image src="photos/d-38-02a.JPG" desc=""/>
-			<image src="photos/d-38a-table.JPG" desc=""/>
-			<image src="photos/d-38a-top.JPG" desc=""/>
+			<image src="/Resources/photos/d-38-01a.JPG" desc=""/>
+			<image src="/Resources/photos/d-38-02-2.JPG" desc=""/>
+			<image src="/Resources/photos/d-38-02a.JPG" desc=""/>
+			<image src="/Resources/photos/d-38a-table.JPG" desc=""/>
+			<image src="/Resources/photos/d-38a-top.JPG" desc=""/>
 		</imageset>
 	</item>
 	<item id="42" name="Д-55-04" x_start="641" x_end="665" y_start="38" y_end="50">
@@ -796,10 +796,10 @@
 			рабочих частот станции.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-04-struct.png" desc="Структурная схема Д-55-04"/>
+			<image src="/Resources/schemes/d-55-04-struct.png" desc="Структурная схема Д-55-04"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-04.JPG" desc="Блок Д-55-04"/>
+			<image src="/Resources/photos/d-55-04.JPG" desc="Блок Д-55-04"/>
 		</imageset>
 	</item>
 	<item id="43" name="Д-12-05-A" x_start="674" x_end="698" y_start="38" y_end="49">
@@ -813,10 +813,10 @@
 			аварии. Коэффициент усиления блока не менее 26 дБ. Неравномерность АЧХ во всем диапазоне усиливаемых частот не более 7 дБ.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-12-05a-func.png" desc="Функциональная схема блока Д-12-05А"/>
+			<image src="/Resources/schemes/d-12-05a-func.png" desc="Функциональная схема блока Д-12-05А"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-12-05-a.jpg" desc="Блок Д-12-05А"/>
+			<image src="/Resources/photos/d-12-05-a.jpg" desc="Блок Д-12-05А"/>
 		</imageset>
 	</item>
 	<item id="44" name="СНБ-05-10" x_start="706" x_end="731" y_start="38" y_end="49">
@@ -841,7 +841,7 @@
 			Фиксированным частотам присвоены условные номера от 55 до 409.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-01.JPG" desc="Блок Д-55-01"/>
+			<image src="/Resources/photos/d-55-01.JPG" desc="Блок Д-55-01"/>
 		</imageset>
 	</item>
 	<item id="46" name="Д-46-02" x_start="674" x_end="698" y_start="73" y_end="78">
@@ -854,11 +854,11 @@
 			сигнала возбудителя Д-55-01М. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-02.JPG" desc="Блок Д-46-02"/>
+			<image src="/Resources/photos/d-46-02.JPG" desc="Блок Д-46-02"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
-			<image src="schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
 		</imageset>
 	</item>
 	<item id="47" name="Д-46-02" x_start="674" x_end="698" y_start="83" y_end="88">
@@ -871,11 +871,11 @@
 			сигнала возбудителя Д-55-01М. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-02.JPG" desc="Блок Д-46-02"/>
+			<image src="/Resources/photos/d-46-02.JPG" desc="Блок Д-46-02"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
-			<image src="schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m.png" desc="Cтруктурная схема Д-46-02М"/>
+			<image src="/Resources/schemes/d-46-02m1.png" desc="Функциональная схема Д-46-02М"/>
 		</imageset>
 	</item>
 	<item id="48" name="Д-55-01" x_start="674" x_end="698" y_start="93" y_end="105">
@@ -888,7 +888,7 @@
 			Фиксированным частотам присвоены условные номера от 55 до 409.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-01.JPG" desc="Блок Д-55-01"/>
+			<image src="/Resources/photos/d-55-01.JPG" desc="Блок Д-55-01"/>
 		</imageset>
 	</item>
 	<item id="49" name="Д-16-00-02" x_start="707" x_end="731" y_start="75" y_end="86">
@@ -907,10 +907,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-00-02.JPG" desc="Кассета Д-46-00-02М"/>
+			<image src="/Resources/photos/d-46-00-02.JPG" desc="Кассета Д-46-00-02М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-00-02m.png" desc="Структурная схема Д-46-00-02М"/>
+			<image src="/Resources/schemes/d-46-00-02m.png" desc="Структурная схема Д-46-00-02М"/>
 		</imageset>
 	</item>
 	<item id="50" name="Д-55-00-11" x_start="735" x_end="746" y_start="55" y_end="107">
@@ -925,10 +925,10 @@
 			<li>fпрм = fгет – 820 МГц.</li></ul>]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55-00-11.JPG" desc="Кассета Д-55-00-11"/>
+			<image src="/Resources/photos/d-55-00-11.JPG" desc="Кассета Д-55-00-11"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-11.png" desc="Cтруктурная схема Д-55-00-11"/>
+			<image src="/Resources/schemes/d-55-00-11.png" desc="Cтруктурная схема Д-55-00-11"/>
 		</imageset>
 	</item>
 	<item id="51" name="Д-45-00-01" x_start="621" x_end="655" y_start="67" y_end="94">
@@ -947,10 +947,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-46-00-01.JPG" desc="Кассета Д-46-00-01М"/>
+			<image src="/Resources/photos/d-46-00-01.JPG" desc="Кассета Д-46-00-01М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-46-00-01m.png" desc="Структурная схема Д-46-00-01М"/>
+			<image src="/Resources/schemes/d-46-00-01m.png" desc="Структурная схема Д-46-00-01М"/>
 		</imageset>
 	</item>
 	<item id="52" name="Д-55-00-15" x_start="641" x_end="665" y_start="112" y_end="123">
@@ -963,10 +963,10 @@
 			Управляющее напряжение для электронного аттенюатора АРУ формируется в демодуляторе стойки Д-38А. С выхода ячейки Д-55-00-15 ФМ ШПС на средней частоте 70 МГц поступает на демодулятор стойки Д-38А.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-15-func.png" desc="Функциональная схема Д-55-00-06Д"/>
+			<image src="/Resources/schemes/d-55-00-15-func.png" desc="Функциональная схема Д-55-00-06Д"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-15.JPG" desc="Д-55-00-15"/>
+			<image src="/Resources/photos/d-55-00-15.JPG" desc="Д-55-00-15"/>
 		</imageset>
 	</item>
 	<item id="53" name="Д-55-00-06" x_start="674" x_end="698" y_start="112" y_end="123">
@@ -982,10 +982,10 @@
 			ФМ ШПС в диапазоне рабочих волн и его перенос на среднюю частоту 820 МГц. Сигнал первого гетеродина формируется в блоке Д-55-01М.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
+			<image src="/Resources/schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
+			<image src="/Resources/photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
 		</imageset>
 	</item>
 	<item id="54" name="Д-55-00-06" x_start="707" x_end="731" y_start="112" y_end="123">
@@ -1001,10 +1001,10 @@
 			ФМ ШПС в диапазоне рабочих волн и его перенос на среднюю частоту 820 МГц. Сигнал первого гетеродина формируется в блоке Д-55-01М.]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
+			<image src="/Resources/schemes/d-55-00-06c-struct.png" desc="Структурная схема Д-55-00-06С"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
+			<image src="/Resources/photos/d-55-00-06c.JPG" desc="Блок Д-55-00-06C"/>
 		</imageset>
 	</item>
 	<item id="55" name="Д-55 М" x_start="616" x_end="753" y_start="8" y_end="134">
@@ -1030,10 +1030,10 @@
 			<li>потребляемая мощность – 400 Вт (от сети 380 В), 30 Вт (по цепи +27 В).</li></ul>]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-55.JPG" desc="Стойка Д-55М"/>
+			<image src="/Resources/photos/d-55.JPG" desc="Стойка Д-55М"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-55m-struct.png" desc="Структурная схема стойки Д-55М"/>
+			<image src="/Resources/schemes/d-55m-struct.png" desc="Структурная схема стойки Д-55М"/>
 		</imageset>
 	</item>
 	<item id="56" name="Д-16" x_start="757" x_end="769" y_start="59" y_end="76" />
@@ -1066,10 +1066,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/mshu.JPG" desc="Малошумящий усилитель"/>
+			<image src="/Resources/photos/mshu.JPG" desc="Малошумящий усилитель"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/mshu.png" desc="Структурная схема МШУ"/>
+			<image src="/Resources/schemes/mshu.png" desc="Структурная схема МШУ"/>
 		</imageset>
 	</item>
 	<item id="60" name="ДУ-1" x_start="833" x_end="860" y_start="43" y_end="58">
@@ -1144,10 +1144,10 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-00-39-struct.png" desc="Функциональная схема антенно-волноводного устройства"/>
+			<image src="/Resources/schemes/d-00-39-struct.png" desc="Функциональная схема антенно-волноводного устройства"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-00-40.JPG" desc="Стойка Д-00-40"/>
+			<image src="/Resources/photos/d-00-40.JPG" desc="Стойка Д-00-40"/>
 		</imageset>
 	</item>
 	<item id="65" name="Д-107" x_start="917" x_end="945" y_start="58" y_end="74">
@@ -1201,10 +1201,10 @@
 			Панель управления антеннами Д-61-09]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-09.JPG" desc="Панель управления антеннами Д-61-09"/>
+			<image src="/Resources/photos/d-61-09.JPG" desc="Панель управления антеннами Д-61-09"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-61-09.png" desc="Структурная схема Д-61-09"/>
+			<image src="/Resources/schemes/d-61-09.png" desc="Структурная схема Д-61-09"/>
 		</imageset>
 	</item>
 	<item id="68" name="Д-61-05" x_start="55" x_end="80" y_start="245" y_end="256">
@@ -1229,7 +1229,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-05.JPG" desc="Панель сигнализации  Д-61-05"/>
+			<image src="/Resources/photos/d-61-05.JPG" desc="Панель сигнализации  Д-61-05"/>
 		</imageset>
 	</item>
 	<item id="69" name="Д-00-55A" x_start="91" x_end="129" y_start="222" y_end="234">
@@ -1254,10 +1254,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
+			<image src="/Resources/photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
+			<image src="/Resources/schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
 		</imageset>
 	</item>
 	<item id="70" name="Д-61-00-01" x_start="90" x_end="128" y_start="244" y_end="256">
@@ -1277,7 +1277,7 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-61-00-01.png" desc="Функциональная схема Д-61-00-01"/>
+			<image src="/Resources/schemes/d-61-00-01.png" desc="Функциональная схема Д-61-00-01"/>
 		</imageset>
 	</item>
 	<item id="71" name="Д-61-00-07" x_start="143" x_end="183" y_start="225" y_end="236">
@@ -1295,10 +1295,10 @@
 			]]>
 		</desc>
 		 <imageset type="photo">
-			<image src="photos/d-61-00-07.JPG" desc="Кассета управления каналом КУ-371 Д-61-00-07"/>
+			<image src="/Resources/photos/d-61-00-07.JPG" desc="Кассета управления каналом КУ-371 Д-61-00-07"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-61-00-07.png" desc="Функциональная схема Д-61-00-07"/>
+			<image src="/Resources/schemes/d-61-00-07.png" desc="Функциональная схема Д-61-00-07"/>
 		</imageset>
 	</item>
 	<item id="72" name="Д-61-00-06" x_start="143" x_end="184" y_start="247" y_end="259">
@@ -1319,7 +1319,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-00-06.JPG" desc="Кассета управления частотой Д-61-00-06"/>
+			<image src="/Resources/photos/d-61-00-06.JPG" desc="Кассета управления частотой Д-61-00-06"/>
 		</imageset>
 	</item>
 	<item id="73" name="Д-61-04" x_start="143" x_end="182" y_start="268	" y_end="281">
@@ -1351,7 +1351,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-04.JPG" desc="Панель управления Д-61-04"/>
+			<image src="/Resources/photos/d-61-04.JPG" desc="Панель управления Д-61-04"/>
 		</imageset>
 	</item>
 	<item id="74" name="Д-41-04" x_start="248" x_end="272" y_start="224" y_end="235">
@@ -1364,7 +1364,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-41-04.JPG" desc="Панель служебной связи Д-41-04"/>
+			<image src="/Resources/photos/d-41-04.JPG" desc="Панель служебной связи Д-41-04"/>
 		</imageset>
 	</item>
 	<item id="75" name="Д-61-02" x_start="207" x_end="234" y_start="256" y_end="269">
@@ -1382,7 +1382,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-02.JPG" desc="Панель телесигнализации Д-61-02"/>
+			<image src="/Resources/photos/d-61-02.JPG" desc="Панель телесигнализации Д-61-02"/>
 		</imageset>
 	</item>
 	<item id="76" name="Д-11-00-03" x_start="242" x_end="276" y_start="256" y_end="269">
@@ -1402,7 +1402,7 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-11-00-03.png" desc="Структурная схема Д-11-00-03"/>
+			<image src="/Resources/schemes/d-11-00-03.png" desc="Структурная схема Д-11-00-03"/>
 		</imageset>
 	</item>
 	<item id="77" name="Д-41-00-05" x_start="225" x_end="264" y_start="277" y_end="289">
@@ -1429,7 +1429,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-41-00-05.JPG" desc="Кассета телесигнализации Д-41-00-05"/>
+			<image src="/Resources/photos/d-41-00-05.JPG" desc="Кассета телесигнализации Д-41-00-05"/>
 		</imageset>
 	</item>
 	<item id="78" name="Д-61" x_start="51" x_end="282" y_start="217" y_end="294">
@@ -1452,10 +1452,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61.JPG" desc="Пульт управления Д-61"/>
+			<image src="/Resources/photos/d-61.JPG" desc="Пульт управления Д-61"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-61.png" desc="Структурная схема Д-61"/>
+			<image src="/Resources/schemes/d-61.png" desc="Структурная схема Д-61"/>
 		</imageset>
 	</item>
 	<item id="79" name="Преобразователь" x_start="293" x_end="348" y_start="296" y_end="308">
@@ -1489,10 +1489,10 @@
 			]]>
 		</desc>
 		 <imageset type="scheme">
-			<image src="schemes/afss-struct.png" desc="Структурная схема АФСС 'Контур-П3'"/>
+			<image src="/Resources/schemes/afss-struct.png" desc="Структурная схема АФСС 'Контур-П3'"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/kontur-pz.JPG" desc="АФСС 'Контур-П3'"/>
+			<image src="/Resources/photos/kontur-pz.JPG" desc="АФСС 'Контур-П3'"/>
 		</imageset>
 	</item>
 	<item id="81" name="Д-88-01-01" x_start="471" x_end="495" y_start="260" y_end="272">
@@ -1529,10 +1529,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-01.JPG" desc="Стойка Д-39-01"/>
+			<image src="/Resources/photos/d-39-01.JPG" desc="Стойка Д-39-01"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-01-struct.png" desc="Структурная схема стойки Д-39-01"/>
+			<image src="/Resources/schemes/d-39-01-struct.png" desc="Структурная схема стойки Д-39-01"/>
 		</imageset>
 	</item>
 	<item id="84" name="Д-39-03" x_start="438" x_end="462" y_start="295" y_end="307">
@@ -1559,10 +1559,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
+			<image src="/Resources/photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
+			<image src="/Resources/schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
 		</imageset>
 	</item>
 	<item id="85" name="Д-39-03" x_start="471" x_end="495" y_start="294" y_end="306">
@@ -1589,10 +1589,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
+			<image src="/Resources/photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
+			<image src="/Resources/schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
 		</imageset>
 	</item>
 	<item id="86" name="Д-39-04" x_start="504" x_end="528" y_start="295" y_end="306">
@@ -1611,10 +1611,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-04.JPG" desc="Стойка Д-39-04"/>
+			<image src="/Resources/photos/d-39-04.JPG" desc="Стойка Д-39-04"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-04.png" desc="структурная схема Д-39-04"/>
+			<image src="/Resources/schemes/d-39-04.png" desc="структурная схема Д-39-04"/>
 		</imageset>
 	</item>
 	<item id="87" name="Д-39-03" x_start="537" x_end="561" y_start="294" y_end="306">
@@ -1641,10 +1641,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
+			<image src="/Resources/photos/d-39-03.JPG" desc="Стойка Д-39-03"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
+			<image src="/Resources/schemes/d-39-03-struct.png" desc="Структурная схема стойки Д-39-03"/>
 		</imageset>
 	</item>
 	<item id="88" name="Д-39-01" x_start="569" x_end="594" y_start="295" y_end="306">
@@ -1663,10 +1663,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-39-01.JPG" desc="Стойка Д-39-01"/>
+			<image src="/Resources/photos/d-39-01.JPG" desc="Стойка Д-39-01"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-39-01-struct.png" desc="Структурная схема стойки Д-39-01"/>
+			<image src="/Resources/schemes/d-39-01-struct.png" desc="Структурная схема стойки Д-39-01"/>
 		</imageset>
 	</item>
 	<item id="89" name="Д-39" x_start="397" x_end="602" y_start="241" y_end="346">
@@ -1702,11 +1702,11 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-39-struct.png" desc="Структурная схема стойки Д-39"/>
+			<image src="/Resources/schemes/d-39-struct.png" desc="Структурная схема стойки Д-39"/>
 		</imageset>
 		<imageset type="photo">
-			<image src="photos/d-39.jpg" desc="Cтойка Д-39"/>
-			<image src="photos/d-39.jpg" desc="Cтойка Д-39"/>
+			<image src="/Resources/photos/d-39.jpg" desc="Cтойка Д-39"/>
+			<image src="/Resources/photos/d-39.jpg" desc="Cтойка Д-39"/>
 		</imageset>
 	</item>
 	<item id="90" name="Д-41-04" x_start="725" x_end="749" y_start="222" y_end="234">
@@ -1719,7 +1719,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-41-04.JPG" desc="Панель служебной связи Д-41-04"/>
+			<image src="/Resources/photos/d-41-04.JPG" desc="Панель служебной связи Д-41-04"/>
 		</imageset>
 	</item>
 	<item id="91" name="Д-61-00-07" x_start="814" x_end="853" y_start="227" y_end="239">
@@ -1737,10 +1737,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-00-07.JPG" desc="Кассета управления каналом КУ-371 Д-61-00-07"/>
+			<image src="/Resources/photos/d-61-00-07.JPG" desc="Кассета управления каналом КУ-371 Д-61-00-07"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-61-00-07.png" desc="Функциональная схема Д-61-00-07"/>
+			<image src="/Resources/schemes/d-61-00-07.png" desc="Функциональная схема Д-61-00-07"/>
 		</imageset>
 	</item>
 	<item id="92" name="Д-00-55А" x_start="864" x_end="902" y_start="221" y_end="233">
@@ -1765,10 +1765,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
+			<image src="/Resources/photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
+			<image src="/Resources/schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
 		</imageset>
 	</item>
 	<item id="93" name="Д-11-00-03" x_start="725" x_end="759" y_start="256" y_end="269">
@@ -1788,7 +1788,7 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-11-00-03.png" desc="Структурная схема Д-11-00-03"/>
+			<image src="/Resources/schemes/d-11-00-03.png" desc="Структурная схема Д-11-00-03"/>
 		</imageset>
 	</item>
 	<item id="94" name="Д-61-02" x_start="766" x_end="794" y_start="255" y_end="268">
@@ -1806,7 +1806,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-02.JPG" desc="Панель телесигнализации Д-61-02"/>
+			<image src="/Resources/photos/d-61-02.JPG" desc="Панель телесигнализации Д-61-02"/>
 		</imageset>
 	</item>
 	<item id="95" name="Д-61-00-06" x_start="814" x_end="853" y_start="249" y_end="260">
@@ -1827,7 +1827,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-00-06.JPG" desc="Кассета управления частотой Д-61-00-06"/>
+			<image src="/Resources/photos/d-61-00-06.JPG" desc="Кассета управления частотой Д-61-00-06"/>
 		</imageset>
 	</item>
 	<item id="96" name="Д-61-00-01" x_start="863" x_end="901" y_start="243" y_end="254">
@@ -1847,7 +1847,7 @@
 			]]>
 		</desc>
 		<imageset type="scheme">
-			<image src="schemes/d-61-00-01.png" desc="Функциональная схема Д-61-00-01"/>
+			<image src="/Resources/schemes/d-61-00-01.png" desc="Функциональная схема Д-61-00-01"/>
 		</imageset>
 	</item>
 	<item id="97" name="Д-61-05" x_start="918" x_end="943" y_start="244" y_end="256">
@@ -1872,10 +1872,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
+			<image src="/Resources/photos/d-00-55a.JPG" desc="Блок эталонных частот Д-00-55А"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
+			<image src="/Resources/schemes/d-00-55a.png" desc="Функциональная схема Д-00-55A"/>
 		</imageset>
 	</item>
 	<item id="98" name="Д-41-00-05" x_start="739" x_end="777" y_start="276" y_end="288">
@@ -1902,7 +1902,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-41-00-05.JPG" desc="Кассета телесигнализации Д-41-00-05"/>
+			<image src="/Resources/photos/d-41-00-05.JPG" desc="Кассета телесигнализации Д-41-00-05"/>
 		</imageset>
 	</item>
 	<item id="99" name="Д-61-04" x_start="811" x_end="852" y_start="271" y_end="282">
@@ -1934,7 +1934,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61-04.JPG" desc="Панель управления Д-61-04"/>
+			<image src="/Resources/photos/d-61-04.JPG" desc="Панель управления Д-61-04"/>
 		</imageset>
 	</item>
 	<item id="100" name="Д-61" x_start="720" x_end="951" y_start="216" y_end="293">
@@ -1957,10 +1957,10 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-61.JPG" desc="Пульт управления Д-61"/>
+			<image src="/Resources/photos/d-61.JPG" desc="Пульт управления Д-61"/>
 		</imageset>
 		<imageset type="scheme">
-			<image src="schemes/d-61.png" desc="Структурная схема Д-61"/>
+			<image src="/Resources/schemes/d-61.png" desc="Структурная схема Д-61"/>
 		</imageset>
 	</item>
 	<item id="101" name="Д-00-127" x_start="704" x_end="751" y_start="323" y_end="343">
@@ -1995,7 +1995,7 @@
 			]]>
 		</desc>
 		 <imageset type="photo">
-			<image src="photos/d-00-31.JPG" desc="Блок коммутации Д-00-31"/>
+			<image src="/Resources/photos/d-00-31.JPG" desc="Блок коммутации Д-00-31"/>
 		</imageset>
 	</item>
 	<item id="103" name="П-193 М" x_start="42" x_end="144" y_start="397" y_end="426">
@@ -2007,7 +2007,7 @@
 			Полевой телефонный индукторный коммутатор П-193М предназначен для оборудования телефонных станций малой емкости. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/p-193m-com.JPG" desc="П-193M"/>
+			<image src="/Resources/photos/p-193m-com.JPG" desc="П-193M"/>
 		</imageset>
 	</item>
 	<item id="104" name="Коммутатор П-193M" x_start="42" x_end="166" y_start="458" y_end="512">
@@ -2019,7 +2019,7 @@
 			Полевой телефонный индукторный коммутатор П-193М предназначен для оборудования телефонных станций малой емкости. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
+			<image src="/Resources/photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
 		</imageset>
 	</item>
 	<item id="105" name="П-193 М" x_start="826" x_end="929" y_start="399" y_end="429">
@@ -2031,7 +2031,7 @@
 			Полевой телефонный индукторный коммутатор П-193М предназначен для оборудования телефонных станций малой емкости. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
+			<image src="/Resources/photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
 		</imageset>
 	</item>
 	<item id="106" name="П321 М" x_start="788" x_end="813" y_start="418" y_end="428">
@@ -2046,7 +2046,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/p-321m.JPG" desc="Пульт управления Д-61"/>
+			<image src="/Resources/photos/p-321m.JPG" desc="Пульт управления Д-61"/>
 		</imageset>
 	</item>
 	<item id="107" name="Коммутатор П-193M" x_start="806" x_end="930" y_start="460" y_end="514">
@@ -2058,7 +2058,7 @@
 			Полевой телефонный индукторный коммутатор П-193М предназначен для оборудования телефонных станций малой емкости. ]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
+			<image src="/Resources/photos/p-193m-com.JPG" desc="Коммутатор П-193M"/>
 		</imageset>
 	</item>
 	<item id="108" name="ИЛ-3/4" x_start="372" x_end="396" y_start="386" y_end="398">
@@ -2070,7 +2070,7 @@
 			В тракте передачи цифровой поток поступает на вход моноблока ИЛ-3/4, который обеспечивает регенерацию линейного сигнала и преобразование его во внутристанционный стык.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/il-34.JPG" desc="ИЛ-3/4"/>
+			<image src="/Resources/photos/il-34.JPG" desc="ИЛ-3/4"/>
 		</imageset>
 	</item>
 	<item id="109" name="ИО-3А" x_start="422" x_end="445" y_start="387" y_end="398">
@@ -2082,7 +2082,7 @@
 			Обеспечивает ввод потоков 48 кбит/с для объединения в групповой цифровой поток со скоростью 480 кбит/с.]]>
 		</desc>
 		 <imageset type="photo">
-			<image src="photos/io-3a.JPG" desc="ИО 3А"/>
+			<image src="/Resources/photos/io-3a.JPG" desc="ИО 3А"/>
 		</imageset>
 	</item>
 	<item id="110" name="ИО-3Б" x_start="454" x_end="479" y_start="387" y_end="399">
@@ -2094,7 +2094,7 @@
 			Обеспечивает вывод потоков 48 кбит/с для разделения группового цифрового потока со скоростью 480 кбит/с.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/io-3b.JPG" desc="ИО 3Б"/>
+			<image src="/Resources/photos/io-3b.JPG" desc="ИО 3Б"/>
 		</imageset>
 	</item>
 	<item id="111" name="ИП" x_start="490" x_end="509" y_start="387" y_end="398">
@@ -2106,7 +2106,7 @@
 			ИП.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/ip.JPG" desc="ИП"/>
+			<image src="/Resources/photos/ip.JPG" desc="ИП"/>
 		</imageset>
 	</item>
 	<item id="112" name="ИО-3А" x_start="520" x_end="544" y_start="387" y_end="398">
@@ -2118,7 +2118,7 @@
 			Обеспечивает ввод потоков 48 кбит/с для объединения в групповой цифровой поток со скоростью 480 кбит/с.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/io-3a.JPG" desc="ИО 3А"/>
+			<image src="/Resources/photos/io-3a.JPG" desc="ИО 3А"/>
 		</imageset>
 	</item>
 	<item id="113" name="ИО-3Б" x_start="553" x_end="577" y_start="387" y_end="398">
@@ -2130,7 +2130,7 @@
 			Обеспечивает вывод потоков 48 кбит/с для разделения группового цифрового потока со скоростью 480 кбит/с.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/io-3b.JPG" desc="ИО 3Б"/>
+			<image src="/Resources/photos/io-3b.JPG" desc="ИО 3Б"/>
 		</imageset>
 	</item>
 	<item id="114" name="ИЛ-3/4" x_start="602" x_end="626" y_start="387" y_end="398">
@@ -2142,7 +2142,7 @@
 			В тракте передачи цифровой поток поступает на вход моноблока ИЛ-3/4, который обеспечивает регенерацию линейного сигнала и преобразование его во внутристанционный стык.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/il-34.JPG" desc="ИЛ-3/4"/>
+			<image src="/Resources/photos/il-34.JPG" desc="ИЛ-3/4"/>
 		</imageset>
 	</item>
 	<item id="115" name="ИС" x_start="490" x_end="509" y_start="411" y_end="422">
@@ -2154,7 +2154,7 @@
 			ИC.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/is.JPG" desc="ИП"/>
+			<image src="/Resources/photos/is.JPG" desc="ИП"/>
 		</imageset>
 	</item>
 	<item id="116" name="ИТ/А" x_start="405" x_end="481" y_start="460" y_end="472">
@@ -2166,7 +2166,7 @@
 			При приеме с узла связи каналов ТЧ происходит их аналого-цифровое преобразование с помощью ИТ/А в цифровые потоки со скоростью передачи 48 кбит/с с помощью блоков ОАК.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/is,it-a.JPG" desc="Стойка ИТ-А (внизу)."/>
+			<image src="/Resources/photos/is,it-a.JPG" desc="Стойка ИТ-А (внизу)."/>
 		</imageset>
 	</item>
 	<item id="117" name="ИТ/А" x_start="517" x_end="589" y_start="460" y_end="472">
@@ -2178,7 +2178,7 @@
 			При приеме с узла связи каналов ТЧ происходит их аналого-цифровое преобразование с помощью ИТ/А в цифровые потоки со скоростью передачи 48 кбит/с с помощью блоков ОАК.]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/is,it-a.JPG" desc="Стойка ИТ-А (внизу)."/>
+			<image src="/Resources/photos/is,it-a.JPG" desc="Стойка ИТ-А (внизу)."/>
 		</imageset>
 	</item>
 	<item id="118" name="Д-00-31" x_start="413" x_end="585" y_start="432" y_end="506">
@@ -2204,7 +2204,7 @@
 			]]>
 		</desc>
 		<imageset type="photo">
-			<image src="photos/d-00-31.JPG" desc="Блок коммутации Д-00-31"/>
+			<image src="/Resources/photos/d-00-31.JPG" desc="Блок коммутации Д-00-31"/>
 		</imageset>
 	</item>
 	<item id="119" name="Д-66" x_start="224" x_end="750" y_start="534" y_end="592">

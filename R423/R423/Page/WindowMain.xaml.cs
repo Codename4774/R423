@@ -19,6 +19,7 @@ using R423.Service.Implementation;
 using System.Reflection;
 using System.Windows.Interactivity;
 using System.Xml.Linq;
+using System.Windows.Navigation;
 
 namespace R423.Page
 {
@@ -185,7 +186,15 @@ namespace R423.Page
                     where (int)(el.Attribute("x_start")) < pos.X && (int)(el.Attribute("x_end")) > pos.X &&
                           (int)(el.Attribute("y_start")) < pos.Y && (int)(el.Attribute("y_end")) > pos.Y
                     select el;
-            new InfoWindow((int)elem.First().Attribute("id")).Show();
+            var navigationWin = new NavigationWindow();
+            try
+            {
+                var elemId = (int)elem.First().Attribute("id");
+                navigationWin.Show();
+                navigationWin.Navigate(new InfoWindow(elemId));
+            }
+            catch(InvalidOperationException)
+            { }
         }
     }
 }

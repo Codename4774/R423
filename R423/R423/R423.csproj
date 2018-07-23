@@ -64,6 +64,9 @@
     </Compile>
     <Compile Include="Model\SelectedDrawableState.cs" />
     <Compile Include="Model\SelectedMode.cs" />
+    <Compile Include="Page\ImageWindow.xaml.cs">
+      <DependentUpon>ImageWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Page\ImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\InfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,15 +142,122 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\photos\converter.JPG" />
     <Content Include="Resources\decScaleButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\incScaleButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\photos\converter.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\photos\d-00-01.JPG" />
+    <Resource Include="Resources\photos\d-00-31.JPG" />
+    <Resource Include="Resources\photos\d-00-39.JPG" />
+    <Resource Include="Resources\photos\d-00-40.JPG" />
+    <Resource Include="Resources\photos\d-00-55a-2.JPG" />
+    <Resource Include="Resources\photos\d-00-55a.JPG" />
+    <Resource Include="Resources\photos\d-12-05-a.jpg" />
+    <Resource Include="Resources\photos\d-38-01-01.jpg" />
+    <Resource Include="Resources\photos\d-38-01-04.jpg" />
+    <Resource Include="Resources\photos\d-38-01-06.jpg" />
+    <Resource Include="Resources\photos\d-38-01-07.jpg" />
+    <Resource Include="Resources\photos\d-38-01-17.JPG" />
+    <Resource Include="Resources\photos\d-38-01a.JPG" />
+    <Resource Include="Resources\photos\d-38-02-2.JPG" />
+    <Resource Include="Resources\photos\d-38-02a.JPG" />
+    <Resource Include="Resources\photos\d-38a-table.JPG" />
+    <Resource Include="Resources\photos\d-38a-top.JPG" />
+    <Resource Include="Resources\photos\d-39-01.JPG" />
+    <Resource Include="Resources\photos\d-39-02-table.JPG" />
+    <Resource Include="Resources\photos\d-39-02.JPG" />
+    <Resource Include="Resources\photos\d-39-03.JPG" />
+    <Resource Include="Resources\photos\d-39-04.JPG" />
+    <Resource Include="Resources\photos\d-39-top.JPG" />
+    <Resource Include="Resources\photos\d-39.JPG" />
+    <Resource Include="Resources\photos\d-41-00-05.jpg" />
+    <Resource Include="Resources\photos\d-41-04.JPG" />
+    <Resource Include="Resources\photos\d-46-00-01.jpg" />
+    <Resource Include="Resources\photos\d-46-00-02.jpg" />
+    <Resource Include="Resources\photos\d-46-02.jpg" />
+    <Resource Include="Resources\photos\d-53-a.JPG" />
+    <Resource Include="Resources\photos\d-53-inside.JPG" />
+    <Resource Include="Resources\photos\d-54.JPG" />
+    <Resource Include="Resources\photos\d-55-00-06c.jpg" />
+    <Resource Include="Resources\photos\d-55-00-06d.jpg" />
+    <Resource Include="Resources\photos\d-55-00-11.jpg" />
+    <Resource Include="Resources\photos\d-55-00-15.jpg" />
+    <Resource Include="Resources\photos\d-55-01.jpg" />
+    <Resource Include="Resources\photos\d-55-04.jpg" />
+    <Resource Include="Resources\photos\d-55.JPG" />
+    <Resource Include="Resources\photos\d-59-top.JPG" />
+    <Resource Include="Resources\photos\d-59.JPG" />
+    <Resource Include="Resources\photos\d-60-top.JPG" />
+    <Resource Include="Resources\photos\d-60.JPG" />
+    <Resource Include="Resources\photos\d-61-00-06.jpg" />
+    <Resource Include="Resources\photos\d-61-00-07.JPG" />
+    <Resource Include="Resources\photos\d-61-02,05.JPG" />
+    <Resource Include="Resources\photos\d-61-02.jpg" />
+    <Resource Include="Resources\photos\d-61-04.JPG" />
+    <Resource Include="Resources\photos\d-61-05.JPG" />
+    <Resource Include="Resources\photos\d-61-09.JPG" />
+    <Resource Include="Resources\photos\d-61.jpg" />
+    <Resource Include="Resources\photos\d-65-m.JPG" />
+    <Resource Include="Resources\photos\d-65.JPG" />
+    <Resource Include="Resources\photos\DSC02900.JPG" />
+    <Resource Include="Resources\photos\DSC02903.JPG" />
+    <Resource Include="Resources\photos\DSC02907.JPG" />
+    <Resource Include="Resources\photos\il-34,io-4.JPG" />
+    <Resource Include="Resources\photos\il-34.JPG" />
+    <Resource Include="Resources\photos\io-3a,3b.JPG" />
+    <Resource Include="Resources\photos\io-3a.JPG" />
+    <Resource Include="Resources\photos\io-3b.JPG" />
+    <Resource Include="Resources\photos\ip.JPG" />
+    <Resource Include="Resources\photos\is,it-a.JPG" />
+    <Resource Include="Resources\photos\is.JPG" />
+    <Resource Include="Resources\photos\kontur-pz.JPG" />
+    <Resource Include="Resources\photos\mshu.JPG" />
+    <Resource Include="Resources\photos\p-193m-com.jpg" />
+    <Resource Include="Resources\photos\p-321m.jpg" />
+    <Resource Include="Resources\photos\zip-table.JPG" />
     <Content Include="Resources\refreshButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\schemes\afss-struct.png" />
+    <Resource Include="Resources\schemes\d-00-39-struct.png" />
+    <Resource Include="Resources\schemes\d-00-55a.png" />
+    <Resource Include="Resources\schemes\d-11-00-03.png" />
+    <Resource Include="Resources\schemes\d-12-05a-func.png" />
+    <Resource Include="Resources\schemes\d-38-01-01.png" />
+    <Resource Include="Resources\schemes\d-38-01-04.png" />
+    <Resource Include="Resources\schemes\d-38-01-06.png" />
+    <Resource Include="Resources\schemes\d-38-02-a.png" />
+    <Resource Include="Resources\schemes\d-38-02a-struct.png" />
+    <Resource Include="Resources\schemes\d-38a-struct.png" />
+    <Resource Include="Resources\schemes\d-39-01-struct.png" />
+    <Resource Include="Resources\schemes\d-39-03-struct.png" />
+    <Resource Include="Resources\schemes\d-39-04.png" />
+    <Resource Include="Resources\schemes\d-39-struct.png" />
+    <Resource Include="Resources\schemes\d-41-00-05.png" />
+    <Resource Include="Resources\schemes\d-46-00-01m.png" />
+    <Resource Include="Resources\schemes\d-46-00-02m.png" />
+    <Resource Include="Resources\schemes\d-46-02m.png" />
+    <Resource Include="Resources\schemes\d-46-02m1.png" />
+    <Resource Include="Resources\schemes\d-53b-struct.png" />
+    <Resource Include="Resources\schemes\d-55-00-06c-struct.png" />
+    <Resource Include="Resources\schemes\d-55-00-06d-struct.png" />
+    <Resource Include="Resources\schemes\d-55-00-11.png" />
+    <Resource Include="Resources\schemes\d-55-00-15-func.png" />
+    <Resource Include="Resources\schemes\d-55-04-struct.png" />
+    <Resource Include="Resources\schemes\d-55m-struct.png" />
+    <Resource Include="Resources\schemes\d-59.png" />
+    <Resource Include="Resources\schemes\d-60.png" />
+    <Resource Include="Resources\schemes\d-61-00-01.png" />
+    <Resource Include="Resources\schemes\d-61-00-07.png" />
+    <Resource Include="Resources\schemes\d-61-09.png" />
+    <Resource Include="Resources\schemes\d-61.png" />
+    <Resource Include="Resources\schemes\mshu.png" />
     <Content Include="Resources\skeme.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,21 +1,23 @@
-﻿<Window x:Class="R423.Page.InfoWindow"
+﻿<Page x:Class="R423.Page.InfoWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:R423.Page"
         mc:Ignorable="d"
-        Title="InfoWindow" Height="450" Width="800">
+        Title="InfoWindow">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" />
             <RowDefinition Height="80*" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <WebBrowser Name="Web" Margin="20" Grid.ColumnSpan="2" Grid.RowSpan="2" ></WebBrowser>
+        <WebBrowser Name="Web" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <Button Name="PhotoButton" Grid.Row="2" Grid.Column="0" Content="Фото" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Photo_Click"/>
+        <Button Name="SchemeButton" Grid.Row="2" Grid.Column="1" Content="Схема" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Scheme_Click"/>
     </Grid>
-</Window>
+</Page>
