@@ -5080,4 +5080,21 @@
       </Point>
     </Points>
   </LineSerializeState>
+  <LineSerializeState>
+    <Id>265</Id>
+    <Points>
+      <Point>
+        <X>1848</X>
+        <Y>1176</Y>
+      </Point>
+      <Point>
+        <X>1848</X>
+        <Y>1212</Y>
+      </Point>
+      <Point>
+        <X>1630</X>
+        <Y>1301</Y>
+      </Point>
+    </Points>
+  </LineSerializeState>
 </ArrayOfLineSerializeState>
