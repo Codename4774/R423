@@ -28,13 +28,27 @@ namespace R423.Service.Implementation
 
         private List<List<Ellipse>> _lastDrawedEllipses;
 
-        private Direction _prevDirection;
+        private Object _currDrawSyncObj;
+        private CurrentDrawingProcess _currentDrawingProcess;
+
+        private Stack<List<Shape>> _lastDrawedShapesStack;
 
         public DrawContextProvider DrawContextProvider
         {
             set
             {
                 _drawContextProvider = value;
+            }
+        }
+
+        public CurrentDrawingProcess CurrentDrawingProcess
+        {
+            get
+            {
+                lock(_currDrawSyncObj)
+                {
+                    return _currentDrawingProcess;
+                }
             }
         }
 
@@ -51,7 +65,8 @@ namespace R423.Service.Implementation
             _animationBlockApperanceDuration = TimeSpan.FromSeconds(_resourceManager.GetInt("animationBlocksApperanceDurationSeconds"));
             _storyboard = new Storyboard();
             _lastDrawedEllipses = new List<List<Ellipse>>();
-            _prevDirection = Direction.Forward;
+            _lastDrawedShapesStack = new Stack<List<Shape>>();
+            _currDrawSyncObj = new Object();
         }
 
         public void DrawSignalPath(int signalPathIndex)
@@ -59,7 +74,12 @@ namespace R423.Service.Implementation
             _drawContextProvider.Clear();
             SignalPath signalPath = SignalPathsController.GetSignalPath(signalPathIndex);
 
-            DrawState(0, signalPathIndex, (nextIndex, signalIndex, statesCount) =>
+            lock (_currDrawSyncObj)
+            {
+                _currentDrawingProcess = CurrentDrawingProcess.Automatic;
+            }
+
+            DrawState(0, signalPathIndex, Direction.Forward, false, (nextIndex, signalIndex, statesCount) =>
                 {
                     DrawNextState(nextIndex, signalIndex, statesCount);
                 }, signalPath.States.Count
@@ -69,80 +89,94 @@ namespace R423.Service.Implementation
         {
             if (nextIndex < statesCount)
             {
-                DrawState(nextIndex, signalIndex, (nextPathIndex, signaPathlIndex, statesPathCount) => {
+                DrawState(nextIndex, signalIndex, Direction.Forward, false, (nextPathIndex, signaPathlIndex, statesPathCount) => {
                         DrawNextState(nextPathIndex, signaPathlIndex, statesPathCount);
                     }, statesCount
                 );
             }
         }
-        public void DrawState(int ordinalStateIndex, int signalPathIndex, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
+        public int DrawState(int ordinalStateIndex, int signalPathIndex, Direction direction, Boolean needToSetManual, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             try
             {
-                SignalPath signalPath = SignalPathsController.GetSignalPath(signalPathIndex);
-
-                if ((ordinalStateIndex < 0))
+                if (needToSetManual)
                 {
-                    return; //todo: implement 
+                    lock (_currDrawSyncObj)
+                    {
+                        _currentDrawingProcess = CurrentDrawingProcess.Handle;
+                    }
                 }
 
-                if ((ordinalStateIndex > signalPath.States.Count - 1))
+                SignalPath signalPath = SignalPathsController.GetSignalPath(signalPathIndex);
+                int returnedIndex = 0;
+                if ((ordinalStateIndex < 0))
                 {
-                    return; //todo: implement 
+                    returnedIndex = 0;
+                    ordinalStateIndex = 0;
+
+                    return returnedIndex;
+                }
+                else if ((ordinalStateIndex > signalPath.States.Count - 1))
+                {
+                    returnedIndex = signalPath.States.Count - 1;
+                    ordinalStateIndex = returnedIndex;
+
+                    return returnedIndex;
+                }
+                else
+                {
+                    returnedIndex = ordinalStateIndex;
                 }
 
                 int stateIndex = signalPath.States[ordinalStateIndex];
 
                 List<SignalLineDrawableState> polylines = SignalPathStatesController.GetDrawableState(stateIndex);
                 
-                DrawLinesWithAnimation(polylines, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
+                DrawLinesWithAnimation(polylines, direction, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
+
+                return returnedIndex;
             }
             catch (Exception ex)
             {
-
+                return -1;
             }
         }
 
-        private void DrawLinesWithAnimation(List<SignalLineDrawableState> lineStates, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
+        private void DrawLinesWithAnimation(List<SignalLineDrawableState> lineStates, Direction direction, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
             _storyboard.Children.Clear();
 
-            ClearPreviousDrawedEllipses(/*(Direction)direction*/);
+            ClearPreviousDrawedState(direction);
 
             var drawedEllipses = new List<Ellipse>();
-
+            var addedState = new List<Shape>();
             for (int i = 0; i < lineStates.Count; i++)
             {
                 lineStates[i].Polyline.Stroke = new SolidColorBrush(Color.FromRgb( lineStates[i].Color.R, lineStates[i].Color.G, lineStates[i].Color.B ));
-                DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, lineStates[i].Type, drawedEllipses, ordinalStateIndex, signalPathIndex, i == 0 ? onDrawComplete : null, statesCount);
+                var addedLines = DrawLineWithAnimation(lineStates[i].Polyline, (Direction)lineStates[i].Direction, lineStates[i].Type, drawedEllipses, ordinalStateIndex, signalPathIndex, i == 0 ? onDrawComplete : null, statesCount);
+
+                addedState.AddRange(addedLines);
             }
 
+            _lastDrawedShapesStack.Push(addedState);
             _lastDrawedEllipses.Add(drawedEllipses);
-
-            //_prevDirection = (Direction)direction;
 
             _storyboard.Begin();
         }
 
-        private void ClearPreviousDrawedEllipses(/*Direction direction*/)
+        private void ClearPreviousDrawedState(Direction direction)
         {
-            //if ((direction == Direction.Forward) && (_lastDrawedEllipses.Count == 1) && (_prevDirection == Direction.Back))
-            //{
-                RemoveLastDrawedEllipses();
-            //}
-            //if ((direction == Direction.Back) && (_prevDirection == Direction.Forward))
-            //{
-            //    RemoveLastDrawedEllipses();
-            //}
-            //if ((direction == Direction.Back) && (_prevDirection == Direction.Back))
-            //{
-            //    RemoveLastDrawedEllipses();
-            //    RemoveLastDrawedEllipses();
-            //}
+            RemoveLastDrawedEllipses();
+            if (direction == Direction.Back)
+            {
+                RemoveLastDrawedLines();
+                RemoveLastDrawedLines();
+            }
         }
 
-        private void DrawLineWithAnimation(Polyline polyline, Direction direction, SignalPathLineState.TypeEnum type, List<Ellipse> drawedEllipses, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
+        private List<Shape> DrawLineWithAnimation(Polyline polyline, Direction direction, SignalPathLineState.TypeEnum type, List<Ellipse> drawedEllipses, int ordinalStateIndex = -1, int signalPathIndex = -1, DrawStateCompletedDelegate onDrawComplete = null, int statesCount = -1)
         {
+            var result = new List<Shape>();
             var polylineForDrawingLine = GetPolylineForPathState(polyline, direction);
 
             polylineForDrawingLine.Stroke = polyline.Stroke;
@@ -160,6 +194,10 @@ namespace R423.Service.Implementation
 
                         SetAnimationPath(polyLineForDrawingEllipse.Points, ellipse, polyLineForDrawingEllipse, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
 
+                        result.Add(polyLineForDrawingEllipse);
+                        result.Add(polylineForDrawingLine);
+
+                        return result;
                     }
                     break;
                 case SignalPathLineState.TypeEnum.Block:
@@ -171,6 +209,15 @@ namespace R423.Service.Implementation
                         DrawLineObjects(polylineForDrawingLine);
 
                         SetLineAnimationOpacity(polylineForDrawingLine, ordinalStateIndex, signalPathIndex, onDrawComplete, statesCount);
+
+                        result.Add(polylineForDrawingLine);
+
+                        return result;
+                    }
+                    break;
+                default:
+                    {
+                        return result;
                     }
                     break;
             }
@@ -260,6 +307,25 @@ namespace R423.Service.Implementation
                 _lastDrawedEllipses.Remove(lastDrawedState);
             }
             catch (Exception exception)
+            {
+                return;
+            }
+        }
+
+        private void RemoveLastDrawedLines()
+        {
+            try
+            {
+                var lastDrawedState = _lastDrawedShapesStack.Pop();
+                if (lastDrawedState != null)
+                {
+                    foreach (var line in lastDrawedState)
+                    {
+                        _drawContextProvider.DrawContext.Children.Remove(line);
+                    }
+                }
+            }
+            catch (Exception e)
             {
                 return;
             }
@@ -390,6 +456,8 @@ namespace R423.Service.Implementation
         {
             _storyboard.Stop();
             _drawContextProvider.Clear();
+            _lastDrawedEllipses.Clear();
+            _lastDrawedShapesStack.Clear();
         }
 
         public void SetSpeed(double speedValue)

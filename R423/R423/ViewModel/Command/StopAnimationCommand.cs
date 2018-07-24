@@ -1,4 +1,5 @@
-﻿using R423.Service.Interface;
+﻿using R423.Model;
+using R423.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace R423.ViewModel.Command
     public class StopAnimationCommand : ICommand
     {
         private readonly IDrawManager _drawManager;
-        public StopAnimationCommand(IDrawManager drawManager)
+        private readonly SelectedDrawableState _selectedDrawableState;
+
+        public StopAnimationCommand(SelectedDrawableState selectedDrawableState, IDrawManager drawManager)
         {
             _drawManager = drawManager;
+            _selectedDrawableState = selectedDrawableState;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,6 +31,7 @@ namespace R423.ViewModel.Command
         {
             _drawManager.StopCurrentAnimation();
             _drawManager.Clear();
+            _selectedDrawableState.OrdinalStateNumber = -1;
         }
     }
 }

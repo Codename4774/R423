@@ -34,6 +34,7 @@ namespace R423.ViewModel.Command
                 int newIndex = Convert.ToInt32(parameter);
 
                 _selectedDrawableState.SignalPathIndex = newIndex;
+                _selectedDrawableState.OrdinalStateNumber = -1;
                 _drawManager.StopCurrentAnimation();
                 _drawManager.Clear();
             }
