@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:R423.Page"
         mc:Ignorable="d"
-        Title="Тропосферная цифровая станция Р-423" Height="600" Width="900">
+        Title="Тропосферная цифровая станция Р-423" Height="600" Width="900" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>

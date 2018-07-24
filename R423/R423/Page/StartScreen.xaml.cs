@@ -31,5 +31,11 @@ namespace R423.Page
             _parent.Show();
             this.Close();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(!_parent.IsActive)
+                _parent.Close();
+        }
     }
 }
