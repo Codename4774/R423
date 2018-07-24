@@ -31,10 +31,5 @@ namespace R423.Page
             _parent.Show();
             this.Close();
         }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            _parent.Close();
-        }
     }
 }
