@@ -73,7 +73,7 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
-        <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black" Background="White" HorizontalAlignment="Stretch">
+        <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black" Background="#EAEFFF" HorizontalAlignment="Stretch">
             <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -81,14 +81,32 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
                 <Canvas Name="ButtonContainerControl" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="200" Canvas.Left="71" Canvas.Top="533" Grid.Column="0">
-                    <Button Name="ButtonPrevious" Content="Назад" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="50" Canvas.Left="35"/>
-                    <Button Name="ButtonNext" Content="Вперёд" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="104" Canvas.Top="5" Width="65"/>
-                    <Button Name="buttonDrawAllState" Content="Отрисовать полностью" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="35" Canvas.Top="28" Width="134"/>
+                    <Button Name="ButtonPrevious" Command="{Binding DrawStateCommand}" CommandParameter="Previous" Canvas.Top="5" Width="30" Canvas.Left="35">
+                        <Image Source="/Resources/backIcon.png" Height="15" />
+                    </Button>
+                    <Label Content="Назад" Canvas.Left="65"/>
+                    <Button Name="ButtonNext" Command="{Binding DrawStateCommand}" CommandParameter="Next" Canvas.Left="121" Canvas.Top="5" Width="30">
+                        <Image Source="/Resources/forwardIcon.png" Height="15" />
+                    </Button>
+                    <Label Content="Вперед" Canvas.Left="152"/>
+                    <Button Name="buttonDrawAllState" Command="{Binding DrawSignalPathCommand}" CommandParameter="Previous" Canvas.Left="35" Canvas.Top="28" Width="30">
+                        <Image Source="/Resources/drawIcon.png" Height="15" />
+                    </Button>
+                    <Label Content="Отрисовать полностью" Canvas.Left="65" Canvas.Top="23"/>
                 </Canvas>
                 <Canvas Name="ButtonContainerAnimation" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="300" Canvas.Left="71" Canvas.Top="533" Grid.Column="1">
-                    <Button Name="ButtonStop" Content="Стоп" Command="{Binding StopAnimationCommand}" CommandParameter="Previous" Canvas.Top="15" Width="80" Canvas.Left="30"/>
-                    <Button Name="ButtonPause" Content="Пауза" Command="{Binding PauseAnimationCommand}" CommandParameter="Next" Canvas.Left="120" Canvas.Top="15" Width="80"/>
-                    <Button Name="buttonResume" Content="Возобновить" Command="{Binding ResumeAnimationCommand}" CommandParameter="Previous" Canvas.Left="210" Canvas.Top="15" Width="80"/>
+                    <Button Name="ButtonStop" Command="{Binding StopAnimationCommand}" CommandParameter="Previous" Canvas.Top="15" Width="35" Canvas.Left="30">
+                        <Image Source="/Resources/stopIcon.png" MaxHeight="12" />
+                    </Button>
+                    <Label Content="Стоп" Canvas.Left="65" Canvas.Top="9"/>
+                    <Button Name="ButtonPause" Command="{Binding PauseAnimationCommand}" CommandParameter="Next" Canvas.Left="120" Canvas.Top="15" Width="35">
+                        <Image Source="/Resources/pauseIcon.png" MaxHeight="12" /> 
+                    </Button>
+                    <Label Content="Пауза" Canvas.Left="155" Canvas.Top="9"/>
+                    <Button Name="buttonResume" Command="{Binding ResumeAnimationCommand}" CommandParameter="Previous" Canvas.Left="210" Canvas.Top="15" Width="45">
+                        <Image Source="/Resources/resumeIcon.png" MaxHeight="12" />
+                    </Button>
+                    <Label Content="Возобновить" Canvas.Left="255" Canvas.Top="9"/>
                 </Canvas>
                 <Label Margin= "0,0,40,0" Content="Масштаб:" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right"></Label>
                 <Slider Name="SliderScale" Margin="0,0,20,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="100" Maximum="4" Minimum="1" Value="1" TickFrequency="0.5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" ValueChanged="SliderScale_ValueChanged" Grid.Column="2" />

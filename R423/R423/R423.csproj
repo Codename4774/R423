@@ -142,13 +142,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\stopIcon.png" />
     <None Include="bin\Debug\photos\converter.JPG" />
+    <Resource Include="Resources\backIcon.png" />
     <Content Include="Resources\decScaleButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\forwardIcon.png" />
+    <Resource Include="Resources\drawIcon.png" />
     <Content Include="Resources\incScaleButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\pauseIcon.png" />
     <Content Include="Resources\photos\converter.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -258,6 +263,7 @@
     <Resource Include="Resources\schemes\d-61-09.png" />
     <Resource Include="Resources\schemes\d-61.png" />
     <Resource Include="Resources\schemes\mshu.png" />
+    <Resource Include="Resources\resumeIcon.png" />
     <Content Include="Resources\skeme.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

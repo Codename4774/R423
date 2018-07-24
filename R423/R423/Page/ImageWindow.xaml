@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:R423.Page"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ImageWindow">
+      Title="Изображение">
 
     <Grid Name="ImgGrid" MouseRightButtonUp="ImgGrid_MouseRightButtonUp" MouseLeftButtonUp="ImgGrid_MouseLeftButtonUp" MouseWheel="ImgGrid_MouseWheel" MouseLeftButtonDown="ImgGrid_MouseLeftButtonDown" MouseMove="ImgGrid_MouseMove">
         <Grid.RowDefinitions>

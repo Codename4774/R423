@@ -30,6 +30,7 @@ namespace R423.Page
             var elem = from el in doc.Elements("item")
                        where (int)(el.Attribute("id")) == id
                        select el;
+            this.Title = elem.First().Attribute("name").Value;
             var desc = elem.First().Element("desc");
             var imageSets = elem.First().Elements("imageset");
             foreach (var set in imageSets)
@@ -52,14 +53,8 @@ namespace R423.Page
                 }
             }
             Web.NavigateToString(desc.Value.ToString());
-            if (_imgPath.Count == 0)
-            {
-                PhotoButton.IsEnabled = false;
-            }
-            if (_schemePath.Count == 0)
-            {
-                SchemeButton.IsEnabled = false;
-            }
+            PhotoButton.IsEnabled = _imgPath.Count != 0;
+            SchemeButton.IsEnabled = _schemePath.Count != 0;
         }
 
         private void Photo_Click(object sender, RoutedEventArgs e)

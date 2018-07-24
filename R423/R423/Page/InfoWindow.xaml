@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:R423.Page"
         mc:Ignorable="d"
-        Title="InfoWindow">
+        Title="InfoWindow"
+        Name="MainPage">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*" />
