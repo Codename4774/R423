@@ -21,5 +21,7 @@
             <ScaleTransform x:Name="ImgScale" />
         </Grid.RenderTransform>
         <Image Name="CurrentImage" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Button Name="ForwardButton" Content="Вперед" Grid.Row="1" Grid.Column="1" Height="30" Width="60" Click="Forward_Click" />
+        <Button Name="BackButton" Content="Назад" Grid.Row="1" Grid.Column="0" Height="30" Width="60" Click="Back_Click" />
     </Grid>
 </Page>

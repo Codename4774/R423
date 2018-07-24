@@ -18,7 +18,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <WebBrowser Name="Web" Grid.ColumnSpan="2" Grid.RowSpan="2" />
-        <Button Name="PhotoButton" Grid.Row="2" Grid.Column="0" Content="Фото" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Photo_Click"/>
-        <Button Name="SchemeButton" Grid.Row="2" Grid.Column="1" Content="Схема" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Scheme_Click"/>
+        <Button Name="PhotoButton" Grid.Row="2" Grid.Column="0" Content="Фото" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Photo_Click"/>
+        <Button Name="SchemeButton" Grid.Row="2" Grid.Column="1" Content="Схема" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Scheme_Click"/>
     </Grid>
 </Page>

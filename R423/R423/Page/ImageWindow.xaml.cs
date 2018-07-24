@@ -24,13 +24,15 @@ namespace R423.Page
         private List<string> _path;
         private int _currentIndex = 0;
         private float _scale = 1;
-        private float MAX_SCALE = 6;
-        private float SCALE_STEP = 0.5F;
+        private float MAX_SCALE = 3;
+        private float SCALE_STEP = 0.1F;
 
         public ImageWindow(List<String> imgPath)
         {
             InitializeComponent();
             _path = imgPath;
+            ForwardButton.IsEnabled = _path.Count > 1;
+            BackButton.IsEnabled = _path.Count > 1;
             CurrentImage.Source = new BitmapImage(new Uri(_path[_currentIndex], UriKind.Relative));
         }
 
@@ -70,6 +72,22 @@ namespace R423.Page
         }
 
         private void ImgGrid_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            _scale = 1;
+            if (++_currentIndex > _path.Count - 1)
+                _currentIndex = 0;
+            CurrentImage.Source = new BitmapImage(new Uri(_path[_currentIndex], UriKind.Relative));
+        }
+
+        private void Forward_Click(object sender, RoutedEventArgs e)
+        {
+            _scale = 1;
+            if (_currentIndex-- == 0)
+                _currentIndex = _path.Count - 1;
+            CurrentImage.Source = new BitmapImage(new Uri(_path[_currentIndex], UriKind.Relative));
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             _scale = 1;
             if (++_currentIndex > _path.Count - 1)

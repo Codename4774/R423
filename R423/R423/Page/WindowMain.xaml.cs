@@ -122,6 +122,11 @@ namespace R423.Page
             SliderScale.Value = _currentScale;
         }
 
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Горячие клавиши:\nCtrl + S - остановка анимации.\nCtrl + R - продолжение анимации.\nCtrl + P - пауза анимации.");
+        }
+
         private void ZoomOut_Click(object sender, RoutedEventArgs e)
         {
             _currentScale = _currentScale <= 1 ? _currentScale : _currentScale - SCALE_STEP;
@@ -173,7 +178,6 @@ namespace R423.Page
 
         private void SliderSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            
             var viewModel = (WindowMainViewModel)DataContext;
             if (viewModel != null)
             {

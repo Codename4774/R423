@@ -10,10 +10,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
             <RowDefinition Height="60*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/top.jpg" />
         <Image Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/startScreen.png" />
-        <Button Grid.Row="2" Content="Старт!" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
+        <Button Grid.Row="2" Content="Старт!" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Button_Click" />
     </Grid>
 </Window>

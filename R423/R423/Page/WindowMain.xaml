@@ -9,6 +9,11 @@
         mc:Ignorable="d"
         Title="Цифровая тропосферная станция Р-423" Height="629.333" Width="1006"
         DataContext="{Binding Path=WindowMainViewModel}">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding PauseAnimationCommand}" Gesture="CTRL+P"/>
+        <KeyBinding Command="{Binding ResumeAnimationCommand}" Gesture="CTRL+R"/>
+        <KeyBinding Command="{Binding StopAnimationCommand}" Gesture="CTRL+S"/>
+    </Window.InputBindings>
     <Grid Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -71,6 +76,9 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
+                <Button ToolTip="Помощь" Click="Help_Click">
+                    <Image Source="/R423;component/Resources/helpButtonIcon.png" />
+                </Button>
             </ToolBar>
         </ToolBarTray>
         <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black" Background="#EAEFFF" HorizontalAlignment="Stretch">
