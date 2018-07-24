@@ -28,6 +28,7 @@ namespace R423.Page
     /// </summary>
     public partial class WindowMain : Window
     {
+        private Window _startScreen;
         private Point _lastDragPoint;
         private float _currentScale = 1;
         private float MAX_SCALE = 4;
@@ -36,6 +37,9 @@ namespace R423.Page
         public WindowMain()
         {
             InitializeComponent();
+            this.Hide();
+            _startScreen = new StartScreen(this);
+            _startScreen.Show();
             DataContext = new WindowMainViewModel(CanvasDrawing, ImageScheme);
             var allModes = (DataContext as WindowMainViewModel).AllModes;
             NameCombo.ItemsSource = allModes.Select(el => el.Name).Distinct();

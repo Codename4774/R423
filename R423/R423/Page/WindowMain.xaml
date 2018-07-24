@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:R423.ViewModel"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="WindowMain" Height="629.333" Width="1006"
+        Title="Цифровая тропосферная станция Р-423" Height="629.333" Width="1006"
         DataContext="{Binding Path=WindowMainViewModel}">
     <Grid Margin="0,0,0,0">
         <Grid.RowDefinitions>
