@@ -33,6 +33,7 @@ namespace R423.Page
         private float _currentScale = 1;
         private float MAX_SCALE = 4;
         private float SCALE_STEP = 0.5F;
+        private const int INITIAL_SIGNAL_PATH_INDEX = 67;
 
         public WindowMain()
         {
@@ -62,7 +63,7 @@ namespace R423.Page
             }
             catch(NullReferenceException e)
             {
-                return 1;
+                return INITIAL_SIGNAL_PATH_INDEX;
             }
         }
 
