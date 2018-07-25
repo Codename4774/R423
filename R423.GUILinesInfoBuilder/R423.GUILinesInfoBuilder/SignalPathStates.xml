@@ -10531,4 +10531,25 @@
       </SignalPathLineState>
     </DrawableOnStateLines>
   </SignalPathStateSerializeState>
+  <SignalPathStateSerializeState>
+    <Id>395</Id>
+    <DrawableOnStateLines>
+      <SignalPathLineState>
+        <Index>239</Index>
+        <Direction>Forward</Direction>
+        <Type>Block</Type>
+        <R>0</R>
+        <G>255</G>
+        <B>0</B>
+      </SignalPathLineState>
+      <SignalPathLineState>
+        <Index>237</Index>
+        <Direction>Forward</Direction>
+        <Type>Block</Type>
+        <R>0</R>
+        <G>255</G>
+        <B>0</B>
+      </SignalPathLineState>
+    </DrawableOnStateLines>
+  </SignalPathStateSerializeState>
 </ArrayOfSignalPathStateSerializeState>
