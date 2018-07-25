@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:R423.Page"
         mc:Ignorable="d"
-        Title="Тропосферная цифровая станция Р-423" Height="600" Width="900" Closing="Window_Closing">
+        Title="Цифровая тропосферная станция Р-423" Height="600" Width="900" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="23*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="65.5*"/>
+            <RowDefinition Height="7.5*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/top.jpg" />
-        <Image Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/startScreen.png" />
-        <Button Grid.Row="2" Content="Старт!" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Button_Click" />
+        <Image Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/top.png" />
+        <Image Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/startScreen.jpg" />
+        <Button Grid.Row="2" Content="Старт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Button_Click" />
     </Grid>
 </Window>
