@@ -1,0 +1,5 @@
+1 - Скомпилить проект R423 (файл R423.sln в папке /R423)
+2 - в папку с проектом (с exe файлом):
+	- скопировать папку Resources из папки /R423;
+	- скопировать файлы LinesCoordinates.xml, SignalPaths.xml, SignalPathStates.xml из папки /R423.GUILinesInfoBuilder/R423.GUILinesInfoBuilder;
+	- скопировать файл info.xml из папки /R423.
