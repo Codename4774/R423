@@ -161,6 +161,7 @@
     <Resource Include="Resources\forwardIcon.png" />
     <Resource Include="Resources\drawIcon.png" />
     <Resource Include="Resources\helpButtonIcon.png" />
+    <Resource Include="Resources\iconApp.png" />
     <Content Include="Resources\incScaleButtonIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

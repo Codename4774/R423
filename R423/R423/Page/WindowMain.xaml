@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="Цифровая тропосферная станция Р-423" Height="629.333" Width="1006"
-        DataContext="{Binding Path=WindowMainViewModel}">
+        DataContext="{Binding Path=WindowMainViewModel}" Icon="/Resources/iconApp.png">
     <Window.InputBindings>
         <KeyBinding Command="{Binding PauseAnimationCommand}" Gesture="CTRL+P"/>
         <KeyBinding Command="{Binding ResumeAnimationCommand}" Gesture="CTRL+R"/>
