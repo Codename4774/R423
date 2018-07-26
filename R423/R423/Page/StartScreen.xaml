@@ -13,7 +13,7 @@
             <RowDefinition Height="7.5*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/top.png" />
-        <Image Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/startScreen.jpg" />
+        <Image Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/startScreen.JPG" />
         <Button Grid.Row="2" Content="Старт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" FontSize="18" Click="Button_Click" />
     </Grid>
 </Window>

@@ -150,8 +150,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\startScreen.JPG" />
     <Resource Include="Resources\top.png" />
-    <Resource Include="Resources\startScreen.jpg" />
     <Resource Include="Resources\stopIcon.png" />
     <None Include="bin\Debug\photos\converter.JPG" />
     <Resource Include="Resources\backIcon.png" />
